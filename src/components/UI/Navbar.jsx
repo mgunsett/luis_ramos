@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 import { playerData } from '../../data/playerData'
 import { NavbarBar } from './NavbarBar'
 import { NavbarSplit } from './NavbarSplit'
+import { NavbarMenu } from './NavbarMenu'
 
 const MotionBox = motion(Box)
 
@@ -12,7 +13,8 @@ const MotionBox = motion(Box)
 //  'clasico' → cápsula flotante glass centrada + card desplegable mobile (original)
 //  'barra'   → barra full-width transparente→sólida, links con subrayado + overlay fullscreen mobile
 //  'split'   → barra con logo centrado y links a los lados + drawer lateral mobile
-const NAV_DESIGN = 'split'
+//  'menu'    → barra minimal (logo + botón menú) con panel grid desplegable en todas las resoluciones
+const NAV_DESIGN = 'menu'
 
 const navLinks = [
   { label: 'Home', href: '#hero'},
@@ -273,9 +275,10 @@ function NavbarClassic() {
   )
 }
 
-// Selector: renderiza la variante según NAV_DESIGN ('clasico' | 'barra' | 'split')
+// Selector: renderiza la variante según NAV_DESIGN ('clasico' | 'barra' | 'split' | 'menu')
 export default function Navbar() {
   if (NAV_DESIGN === 'barra') return <NavbarBar />
   if (NAV_DESIGN === 'split') return <NavbarSplit />
+  if (NAV_DESIGN === 'menu')  return <NavbarMenu />
   return <NavbarClassic />
 }

@@ -8,12 +8,13 @@ import polaco1 from '@assets/polaco1.webp'
 import peru from '@assets/peru.webp'
 import alianzaLima from '@assets/escudo_alianza.webp'
 //Escudos trayectoria
-import escudoHuracan from '@assets/escudos/escudo_huracan.png'
-import escudoNewells from '@assets/escudos/escudo_newells.webp'
-import escudoRacing from '@assets/escudos/escudo_racing.webp'
-import escudoSanlorenzo from '@assets/escudos/escudo_sanlorenzo.webp'
-import escudoTalleres from '@assets/escudos/escudo_talleres.webp'
-import escudoTigre from '@assets/escudos/escudo_tigre.webp'
+import escudoAmerica from '@assets/escudos/escudo_america.webp'
+import escudoChankas from '@assets/escudos/escudo_chankas.webp'
+import escudoCusco from '@assets/escudos/escudo_cusco.webp'
+import escudodepMunicipal from '@assets/escudos/escudo_depMunicipal.webp'
+import escudoLlacuabamba from '@assets/escudos/escudo_llacuabamba.webp'
+import escudoMannucci from '@assets/escudos/escudo_mannucci.webp'
+import escudoPeru from '@assets/escudos/escudo_peru.webp'
 //Gallery
 import image1 from '@assets/gallery/image1.webp'
 import image2 from '@assets/gallery/image2.webp'
@@ -29,6 +30,8 @@ import image11 from '@assets/gallery/image11.webp'
 import image12 from '@assets/gallery/image12.webp'
 import image13 from '@assets/gallery/image13.webp'
 import image14 from '@assets/gallery/image14.webp'
+import image15 from '@assets/gallery/image15.webp'
+import image16 from '@assets/gallery/image16.webp'
 //Video
 import photoGraph from '@assets/perfil_video.webp'
 //Prensa
@@ -54,129 +57,137 @@ export const playerData = {
   positionShort: 'DC',
   nationality: 'Peruano',
   nationalityFlag: peru,
-  age: 31,
-  height: '1.74m',
-  weight: '67kg',
+  age: 26,
+  height: '1.83m',
+  weight: '75kg',
   foot: 'Derecho',
-  birthDate: '03 / 12 / 1994  ',
-  birthPlace: 'El Trébol, Perú',
+  birthDate: '13 / 12 / 1999  ',
+  birthPlace: 'Trujillo, Perú',
   currentClub: 'Alianza Lima',
   logoCurrentClub: alianzaLima,
   image: polaco1,
   
 
   stats: [
-    { label: 'Velocidad',      value: 90 },
-    { label: 'Remate',     value: 84 },
-    { label: 'Regate',         value: 88 },
-    { label: 'Pases',    value: 91 },
-    { label: 'Presión Alta',   value: 85 },
+    { label: 'Velocidad',      value: 84 },
+    { label: 'Remate',     value: 89 },
+    { label: 'Regate',         value: 83 },
+    { label: 'Pases',    value: 79 },
+    { label: 'Presión Alta',   value: 87 },
     { label: 'Visión de Juego',value: 89 },
   ],
 
   seasonStats: [
-    { label: 'Partidos',    value: 49},
-    { label: 'Goles',       value: 2},
-    { label: 'Pases Completos', value: 444},
-    { label: 'Tiros al arco', value: 11},
-    { label: 'Min / Part.', value: "1,480'" },
+    { label: 'Partidos',    value: 63},
+    { label: 'Goles',       value: 15},
+    { label: 'Oportunidades', value: 29},
+    { label: 'Tiros al arco', value: 37},
+    { label: 'Min / Part.', value: "2,858'" },
     { label: 'Valoración', value: 8.5},
 
   ],
 
   clubs: [
     {
-      name:    'Universitario',
+      name:    'Alianza Lima',
       country: 'Perú',
       years:   '2026 — Actualidad',
       logo:    alianzaLima,
-      titles:  [],
-      info:    'Préstamo',
+      titles:  ['Torneo Apertura 2026'],
+      info:    '',
     },
     {
-      name:    'C.A Tigre',
-      country: 'Argentina',
+      name:    'Selección Perú',
+      country: 'Perú',
+      years:   '2024 — Actualidad',
+      logo:    escudoPeru,
+      titles:  [],
+      info:    '',
+    },
+    {
+      name:    'America de Cali',
+      country: 'Colombia',
       years:   '2025',
-      logo:    escudoTigre,
+      logo:    escudoAmerica,
       titles:  [],
       info:    'Préstamo',
     },
     {
-      name:    'C.A Huracán',
-      country: 'Argentina',
-      years:   '2023 — 2024',
-      logo:    escudoHuracan,
+      name:    'Cusco F.C.',
+      country: 'Perú',
+      years:   '2024',
+      logo:    escudoCusco,
       titles:  [],
-      info:    'Préstamo',
+      info:    '',
     },
     {
-      name:    'Talleres de Córdoba',
-      country: 'Argentina',
+      name:    'Los Chankas F.C.',
+      country: 'Perú',
+      years:   '2023',
+      logo:    escudoChankas,
+      titles:  [],
+      info:    '',
+    },
+    {
+      name:    'Deportivo Municipal',
+      country: 'Perú',
+      years:   '2022 — 2023',
+      logo:    escudodepMunicipal,
+      titles:  [],
+      info:    '',
+    },
+    {
+      name:    'Dep. Llacuabamba',
+      country: 'Perú',
       years:   '2021 — 2022',
-      logo:    escudoTalleres,
-      titles:  [],
-      info:    'Préstamo',
-    },
-    {
-      name:    'Racing Club',
-      country: 'Argentina',
-      years:   '2020 — Actualidad',
-      logo:    escudoRacing,
-      titles:  ['Supercopa Internacional 2023'],
-      info:    '',
-    },
-    {
-      name:    'San Lorenzo de Almagro',
-      country: 'Argentina',
-      years:   '2019',
-      logo:    escudoSanlorenzo,
+      logo:    escudoLlacuabamba,
       titles:  [],
       info:    '',
     },
     {
-      name:    'Newell\'s Old Boys',
-      country: 'Argentina',
-      years:   '2014',
-      logo:    escudoNewells,
+      name:    'C.A. Mannucci',
+      country: 'Perú',
+      years:   '2019 — 2020',
+      logo:    escudoMannucci,
       titles:  [],
-      info:    '',
+      info:    'Debút profesional',
     },
   ],
 
   videos: [
     {
       id: 'v2',
-      instagramId: 'DYqG3t8xDzY',
-      title: 'Highlight \'26',
-      fullTitle: 'Hector Fertoli | Jugadas destacadas \'26',
-      season: 'Highlight \'26',
+      instagramId: 'DaEvRiyOIXL',
+      title: 'Alianza Lima \'26',
+      fullTitle: 'Luis Ramos | Jugadas destacadas \'26',
+      season: 'Alianza Lima \'26',
       league: 'LIGA 1 2025',
-      thumbnail: image8,
-      cover: image8,
-      category: 'Universitario',
-    },
-    {
-      id: 'v3',
-      instagramId: 'DKQcYIht3oD',
-      title: 'Highlight Tigre \'25',
-      fullTitle: 'Hector Fertoli | Jugadas destacadas \'25',
-      season: 'Highlight Tigre \'25',
-      league: 'Liga Argentina',
-      thumbnail: image6,
-      cover: image6,
-      category: 'Highlights',
-    },
-    
-    {
-      id: 'v3',
-      instagramId: 'DEYUrsoy4L_',
-      title: 'Highlight Huracán \'24',
-      fullTitle: 'Hector Fertoli | Asistencias y juego',
-      season: 'Highlight Huracán \'24',
-      league: 'Liga Argentina 2024',
       thumbnail: image1,
       cover: image1,
       category: 'Highlights',
+    },
+    {
+      id: 'v3',
+      instagramId: 'DPaIw9xjjds',
+      title: 'Gol America de Cali \'25',
+      fullTitle: 'Luis Ramos | Gol America de Cali \'25',
+      season: 'Gol America de Cali \'25',
+      league: 'LIGA 1 2025',
+      thumbnail: image15,
+      cover: image15,
+      category: 'Gol',
+    },
+    
+    {
+      id: 'v4',
+      instagramId: 'DBXRQzgP80c',
+      title: 'Selection Perú',
+      fullTitle: 'Luis Ramos | Jugadas destacadas',
+      season: 'Selección Perú',
+      league: 'Eliminatorias',
+      thumbnail: image5,
+      cover: image5,
+      category: 'Selección',
     },
   ],
 
@@ -197,8 +208,8 @@ export const playerData = {
     { id: 12, src: image12, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
     { id: 13, src: image13, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
     { id: 14, src: image14, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-  
-
+    { id: 15, src: image15, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
+    { id: 16, src: image16, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
   ],
 
   socialMedia: [
@@ -206,8 +217,8 @@ export const playerData = {
       label: 'Instagram',
       icon: FaInstagram,
       iconBg: FaInstagram,
-      handle: '@rayofertoli',
-      url: 'https://www.instagram.com/rayofertoli/',
+      handle: '@luisramos_09',
+      url: 'https://www.instagram.com/luisramos_09/',
       hoverColor: '#E1306C',
       hoverGradient: 'insta-gradient',
     },
@@ -215,8 +226,8 @@ export const playerData = {
       label: 'TransferMarkt',
       image: transfermkt,
       iconBg: IoMdStats,
-      handle: '/hector-fertoli',
-      url: 'https://www.transfermarkt.com.ar/hector-fertoli/profil/spieler/424024',
+      handle: '/luis-ramos',
+      url: 'https://www.transfermarkt.com.ar/luis-ramos/profil/spieler/687529',
       hoverColor: '#2e73f2',
     },
   ],
@@ -228,7 +239,8 @@ export const playerData = {
       image:       moon,
       handle:     '@moonsportsgroup_',
       url:        'https://www.instagram.com/moonsportsgroup_/',
-      hoverColor: 'rgba(139,69,19,0.18)',
+      hoverColor: 'rgba(19, 81, 139, 0.2)',
+      borderColor: 'rgb(19, 81, 139)',
     },
     {
       title:      'Contacto Marketing',
@@ -237,6 +249,7 @@ export const playerData = {
       handle:     '@_ledsports',
       url:        'https://www.instagram.com/_ledsports/',
       hoverColor: 'rgba(212,168,75,0.18)',
+      borderColor: 'rgb(129, 103, 46)',
     },
   ],
 }

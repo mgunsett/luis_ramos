@@ -114,8 +114,8 @@ function ContactRow({ item, gold }) {
       role="group"
       _hover={{
         transform: 'translateY(-3px)',
-        borderColor: gold ? 'brand.orangeLight' : 'brand.amber',
-        bg: gold ? 'rgba(163,107,44,0.04)' : 'brand.bgRef',
+        borderColor: item.borderColor,
+        bg: item.hoverColor,
       }}
     >
       <Flex align="center" gap={4}>
@@ -161,7 +161,7 @@ function ContactRow({ item, gold }) {
           fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
           color="brand.bone" 
           fontWeight={400} 
-          _groupHover={{ color: gold ? 'brand.orangeLight' : 'brand.gray2' }}
+          _groupHover={{ color:'brand.orangeLight'}}
           >
             {item.handle}
           </Text>
