@@ -103,9 +103,6 @@ export function NavbarMenu() {
         borderColor={scrolled && !open ? 'brand.amberLight' : 'transparent'}
         transition="background 0.35s, border-color 0.35s"
       >
-        {/* Desde md, tres zonas: menú (izq) · logo (centro) · CTA (der) — las
-            columnas 1fr dejan el logo ópticamente centrado.
-            En mobile se invierte a dos zonas: logo (izq) · menú (der). */}
         <Grid
           templateColumns={{ base: '1fr auto', md: '1fr auto 1fr' }}
           alignItems="center"
@@ -140,7 +137,7 @@ export function NavbarMenu() {
               direction="column"
               gap="5px"
               boxSize={{ base: '42px', md: '46px' }}
-              borderRadius="full"
+              borderRadius="5px"
               border="1px solid"
               borderColor={open ? 'brand.dorado' : 'brand.amberLight'}
               transition="border-color 0.3s, background 0.3s"

@@ -35,7 +35,7 @@ function MatchSlot({ data, label, labelColor }) {
         <VStack spacing={1} align="center" flex={1}>
           <Shield src={home.shield} name={home.name} />
           <Text fontFamily="mono" fontSize="9px" color="brand.bone" textTransform="uppercase"
-                letterSpacing="wider" textAlign="center" noOfLines={1}>
+                letterSpacing="wider" textAlign="center" noOfLines={2}>
             {home.name}
           </Text>
         </VStack>
@@ -44,13 +44,13 @@ function MatchSlot({ data, label, labelColor }) {
         <Box textAlign="center" px={2}>
           {homeScore !== null && awayScore !== null ? (
             <HStack spacing={1} justify="center">
-              <Text fontFamily="heading" fontSize="2xl" color="white" lineHeight={1}>
+              <Text fontFamily="heading" fontSize="2xl" color="brand.amber" lineHeight={1}>
                 {homeScore}
               </Text>
-              <Text fontFamily="heading" fontSize="lg" color="brand.brown" lineHeight={1}>
+              <Text fontFamily="heading" fontSize="lg" color="brand.dorado" lineHeight={1}>
                 —
               </Text>
-              <Text fontFamily="heading" fontSize="2xl" color="white" lineHeight={1}>
+              <Text fontFamily="heading" fontSize="2xl" color="brand.amber" lineHeight={1}>
                 {awayScore}
               </Text>
             </HStack>
@@ -82,7 +82,7 @@ function MatchSlot({ data, label, labelColor }) {
         </Text>
         {stadium && (
           <Text fontFamily="mono" fontSize="8px" color="brand.gray" letterSpacing="wider"
-                textAlign="right" noOfLines={1} maxW="100px">
+                textAlign="right" maxW="120px">
             {stadium}
           </Text>
         )}
@@ -147,19 +147,19 @@ function CollapsedTab({ last, onClick }) {
 
       {hasScore && (
         <VStack spacing={1.5} align="center">
-          <Shield src={last.home.shield} name={last.home.name} size="18px" />
+          <Shield src={last.home.shield} name={last.home.name} size="30px" />
           <Flex spacing={0.5} justify="center" direction="column" align="center">
-            <Text fontFamily="heading" fontSize="md" color="white" lineHeight={1}>
+            <Text fontFamily="heading" fontSize="md" color="brand.amber" lineHeight={1}>
               {last.homeScore}
             </Text>
-            <Text fontFamily="heading" fontSize="xs" color="brand.amberLight" lineHeight={1}>
+            <Text fontFamily="heading" fontSize="xs" color="brand.dorado" lineHeight={1}>
               —
             </Text>
-            <Text fontFamily="heading" fontSize="md" color="white" lineHeight={1}>
+            <Text fontFamily="heading" fontSize="md" color="brand.amber" lineHeight={1}>
               {last.awayScore}
             </Text>
           </Flex>
-          <Shield src={last.away.shield} name={last.away.name} size="18px" />
+          <Shield src={last.away.shield} name={last.away.name} size="30px" />
         </VStack>
       )}
 
@@ -214,29 +214,29 @@ export function MatchBox({ last, next, variant = 'card' }) {
                 bg: 'brand.brown',
               }}
             >
-              <Box
-                as="button"
-                type="button"
-                onClick={() => setIsOpen(false)}
-                aria-label="Cerrar partidos"
-                position="absolute"
-                top={'130px'}
-                right={3}
-                zIndex={2}
-                color="brand.rec"
-                fontFamily="mono"
-                fontSize="lg"
-                lineHeight={1}
-                cursor="pointer"
-                transition="all 0.2s"
-                _hover={{ color: 'brand.rec' }}
-              >
-                ⟫
-              </Box>
 
               <VStack spacing={{ base: 4, md: 6 }} align="stretch">
                 <MatchSlot data={last} label="Último Resultado" labelColor="brand.amber" />
-                <Box h="1px" bg="brand.amberLight" w="80%" alignSelf="center" />
+                <Flex justify="flex-end" align="center" gap={4}>
+                  <Box h="1px" bg="brand.amberLight" w="80%" alignSelf="center" my={2} />
+                  <Box
+                    as="button"
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Cerrar partidos"
+
+                    zIndex={2}
+                    color="brand.rec"
+                    fontFamily="mono"
+                    fontSize="lg"
+                    lineHeight={1}
+                    cursor="pointer"
+                    transition="all 0.2s"
+                    _hover={{ color: 'brand.rec' }}
+                  >
+                    ⟫
+                  </Box>
+                </Flex>
                 <MatchSlot data={next} label="Próximo Partido" labelColor="brand.gray2" />
               </VStack>
             </MotionBox>

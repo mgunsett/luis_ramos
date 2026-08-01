@@ -31,7 +31,7 @@ const inputStyle = {
   border: '1px solid',
   borderColor: 'brand.brownDark',
   borderRadius: 'md',
-  fontFamily: 'mono', fontSize: 'sm', color: 'white',
+  fontFamily: 'mono', fontSize: 'sm', color: 'brand.amber',
   h: '42px',
   _hover: { borderColor: 'brand.gray' },
   _focus: { borderColor: 'brand.brown', boxShadow: '0 0 0 1px rgba(30,95,168,0.4)' },
@@ -184,7 +184,7 @@ function MatchForm({ slot, label, data, onSave, uploading }) {
 
       <Button
         mt={5} w="full"
-        bg="brand.brown" color="white"
+        bg="brand.dorado" color="white"
         fontFamily="mono" fontSize="sm" letterSpacing="widest" textTransform="uppercase"
         borderRadius="md" h="44px"
         leftIcon={<FiSave />}
@@ -215,7 +215,7 @@ function MatchPreviewCard({ slot, data, label, onEdit, onDelete }) {
               textTransform="uppercase" letterSpacing="widest" mb={2}>
           {label}
         </Text>
-        <Text fontFamily="mono" fontSize="sm" color="brand.brownDark">
+        <Text fontFamily="mono" fontSize="sm" color="brand.gray2">
           Sin datos cargados
         </Text>
       </Box>
@@ -244,7 +244,7 @@ function MatchPreviewCard({ slot, data, label, onEdit, onDelete }) {
         borderColor="brand.brownDark"
       >
         <Badge
-          fontFamily="mono" fontSize="9px"
+          fontFamily="heading" fontSize="9px"
           bg={slot === 'last' ? 'brand.amberLight' : 'brand.brownLight'}
           color={slot === 'last' ? 'brand.amber' : 'brand.brownLight'}
           border="1px solid"
@@ -293,7 +293,7 @@ function MatchPreviewCard({ slot, data, label, onEdit, onDelete }) {
               </Text>
             </Flex>
           )}
-          <Text fontFamily="mono" fontSize={{ base: '11px', md: '12px' }} color="white"
+          <Text fontFamily="mono" fontSize={{ base: '11px', md: '12px' }} color="brand.gray"
                 textTransform="uppercase" letterSpacing="wider" textAlign="center" noOfLines={1}>
             {data.home_team}
           </Text>
@@ -301,13 +301,13 @@ function MatchPreviewCard({ slot, data, label, onEdit, onDelete }) {
 
         {/* Score */}
         <HStack spacing={3} flexShrink={0}>
-          <Text fontFamily="heading" fontSize={{ base: '3xl', md: '4xl' }} color="white" lineHeight={1}>
+          <Text fontFamily="heading" fontSize={{ base: '3xl', md: '4xl' }} color="brand.amber" lineHeight={1}>
             {homeScore}
           </Text>
-          <Text fontFamily="heading" fontSize={{ base: 'lg', md: 'xl' }} color="brand.brownDark" lineHeight={1}>
+          <Text fontFamily="heading" fontSize={{ base: 'lg', md: 'xl' }} color="brand.dorado" lineHeight={1}>
             —
           </Text>
-          <Text fontFamily="heading" fontSize={{ base: '3xl', md: '4xl' }} color="white" lineHeight={1}>
+          <Text fontFamily="heading" fontSize={{ base: '3xl', md: '4xl' }} color="brand.amber" lineHeight={1}>
             {awayScore}
           </Text>
         </HStack>
@@ -324,7 +324,7 @@ function MatchPreviewCard({ slot, data, label, onEdit, onDelete }) {
               </Text>
             </Flex>
           )}
-          <Text fontFamily="mono" fontSize={{ base: '11px', md: '12px' }} color="white"
+          <Text fontFamily="mono" fontSize={{ base: '11px', md: '12px' }} color="brand.gray"
                 textTransform="uppercase" letterSpacing="wider" textAlign="center" noOfLines={1}>
             {data.away_team}
           </Text>
@@ -488,7 +488,7 @@ export default function AdminPage() {
   if (loading) {
     return (
       <Box minH="100vh" bg="brand.dark" display="flex" alignItems="center" justifyContent="center">
-        <Spinner color="brand.brown" size="lg" />
+        <Spinner color="brand.brand" size="lg" />
       </Box>
     )
   }
@@ -506,7 +506,7 @@ export default function AdminPage() {
           backdropFilter="blur(10px)"
         >
           <VStack spacing={1} mb={6}>
-            <Text fontFamily="heading" fontSize="3xl" color="white">{playerData.name} <Text as="span" color="brand.brown">{playerData.fullName}</Text> _</Text>
+            <Text fontFamily="heading" fontSize="3xl" color="brand.amber">{playerData.name} <Text as="span" color="brand.amber">{playerData.fullName}</Text> _</Text>
             <Text fontFamily="mono" fontSize="10px" color="brand.gray"
                   letterSpacing="widest" textTransform="uppercase">
               Panel de administración
@@ -547,7 +547,7 @@ export default function AdminPage() {
         {/* Header */}
         <Flex align="center" justify="space-between" mb={{ base: 6, md: 8 }}>
           <Box>
-            <Text fontFamily="heading" fontSize={{ base: '2xl', md: '3xl' }} color="white" lineHeight={1}>
+            <Text fontFamily="heading" fontSize={{ base: '2xl', md: '3xl' }} color="brand.amber" lineHeight={1}>
               {playerData.initials}_ Admin
             </Text>
             <HStack spacing={2} mt={2}>
@@ -596,9 +596,9 @@ export default function AdminPage() {
             <TabList mb={5} gap={2}>
               <Tab
                 fontFamily="mono" fontSize="11px" letterSpacing="widest"
-                textTransform="uppercase" color="brand.gray"
+                textTransform="uppercase" color="brand.gray2" color="brand.gray"
                 borderRadius="md" px={4} py={2}
-                _selected={{ color: 'white', bg: 'brand.brown' }}
+                _selected={{ color: 'white', bg: 'brand.gray' }}
                 _hover={{ color: 'white' }}
               >
                 Último Resultado
@@ -607,7 +607,7 @@ export default function AdminPage() {
                 fontFamily="mono" fontSize="11px" letterSpacing="widest"
                 textTransform="uppercase" color="brand.gray"
                 borderRadius="md" px={4} py={2}
-                _selected={{ color: 'white', bg: 'brand.brown' }}
+                _selected={{ color: 'white', bg: 'brand.gray' }}
                 _hover={{ color: 'white' }}
               >
                 Próximo Partido

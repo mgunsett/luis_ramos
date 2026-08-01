@@ -149,7 +149,7 @@ export function RingsStats() {
       bg="transparent"
       border="1px solid"
       borderColor="brand.amber"
-      
+      borderRadius="5px"
       p={{ base: 6, md: 10, lg: 12 }}
       position="relative"
     >

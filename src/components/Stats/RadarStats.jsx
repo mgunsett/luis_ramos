@@ -266,7 +266,7 @@ export function SeasonColumn({ items }) {
           className="radar-side-row"
           border="1px solid"
           borderColor="brand.amber"
-        
+          borderRadius="5px"
           p={{ base: 4, lg: 3.5 }}
           bg="brand.dark"
           transition="border-color 0.3s, background 0.3s, transform 0.3s"

@@ -37,7 +37,7 @@ function SocialCard({ item }) {
         opacity={0.2}
         transition="all 0.4s ease"
         _groupHover={{ opacity: 0.18, color: (item.hoverColor) }}
-        color="white"
+        color="brand.gray"
         pointerEvents="none"
         sx={gradientFill}
       >
@@ -66,7 +66,7 @@ function SocialCard({ item }) {
           filter={{ base: 'brightness(0.7)', md: 'brightness(0.3)' }}
           color="whiteAlpha.700"
           transition="all 0.3s ease"
-          _groupHover={{ color: item.hoverColor, filter:"brightness(0.9)"}}
+          _groupHover={{ color: item.hoverColor, filter:"brightness(1.0)" }}
         />
         )}
         <Text
@@ -140,7 +140,7 @@ function ContactRow({ item, gold }) {
             filter={{ base: 'brightness(0.7)', md: 'brightness(0.3)' }}
             transition="all 0.3s ease"
             _groupHover={{ 
-              filter: 'brightness(0.98)',
+              filter: 'brightness(1.0)',
              }}
              />
           </Box>

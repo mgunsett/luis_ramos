@@ -212,6 +212,30 @@ export const playerData = {
     { id: 16, src: image16, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
   ],
 
+   press: [
+    {
+      media: 'Wins SportsTV',
+      logo:  logo1,
+      title: '🔥Con doblete del peruano Luis Ramos, América venció 2-0 al DIM y se quedó con el primer lugar en #LALIGAxWIN.',
+      date:  'Mayo 2025 ',
+      url:   'https://www.instagram.com/reels/DKGMWJmJsNK/',
+    },
+    {
+      media: 'Conmebol Sudamericana',
+      logo:  logo3,
+      title: '😎👹 ¿Gol? ¡Golazo de Luis Ramos 9⃣ para @americadecali 🇨🇴! COPA SUDAMERICANA',
+      date:  'Abril 2025',
+      url:   'https://www.instagram.com/reels/DINZEdxx7Ci/',
+    },
+    {
+      media: 'Cusco FC',
+      logo:  logo2,
+      title: 'Luis Ramos ⚽️ nos regaló un gol que hizo historia, y ahora está nominado al Mejor Gol del Año 2024. 🌟🔥',
+      date:  'Enero 2025',
+      url:   'https://www.instagram.com/reels/DETBg0ehPo3/',
+    },
+  ],
+
   socialMedia: [
     {
       label: 'Instagram',
