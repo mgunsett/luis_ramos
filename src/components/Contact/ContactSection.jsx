@@ -19,7 +19,7 @@ function SocialCard({ item }) {
       bg="brand.dark"
       border="1px solid"
       borderColor="brand.amber"
-      borderRadius={'10px'}
+      borderRadius={'5px'}
       p={{ base: 6, md: 8 }}
       transition="all 0.3s ease"
       role="group"
@@ -105,7 +105,7 @@ function ContactRow({ item, gold }) {
       bg="rgba(255,255,255,0.02)"
       border="1px solid"
       borderColor={gold ? 'brand.orangeLight' : 'brand.amber'}
-      borderRadius='10px'
+      borderRadius='5px'
       borderLeftColor= {gold ? 'brand.orangeLight' : 'brand.amber'}
       borderLeftWidth= '4px'
       borderLeftStyle= 'solid'

@@ -50,7 +50,7 @@ function PlayerPanel() {
       </Text>
       <Box w={{ base: '100px', md: "1px" }} h={{ base: "1px", md: "70px", lg: "100px" }} bg="brand.amber" mt={{ base: 2, md: 8 }}/>
       <Flex id="player-info-text" direction={'column'} justifyContent={'flex-start'} gap={1} mt={{ base: 4, md: 8 }}>
-        <Flex gap={1} justifyContent='flex-start' alignItems={{ base: 'flex-start', md: 'center' }} direction={{ base: 'column', md: 'row' }}>
+        <Flex gap={1} justifyContent='flex-start' alignItems={{ base: 'flex-start', md: 'center' }} direction={{ base: 'row', md: 'row' }}>
           <Text className='text-title' fontSize={{ base: '9px', md: "10px" }} color="brand.bone"
             textTransform="uppercase" letterSpacing="widest">
             Posición
@@ -123,6 +123,7 @@ export default function Hero() {
   return (
     <Box ref={outerRef} h="200vh" position="relative" zIndex={1} id= 'hero'>
       <Box
+        className="hero-container"
         ref={containerRef}
         position="sticky"
         top={0}
@@ -146,8 +147,8 @@ export default function Hero() {
           display="flex"
           justifyContent="center"
           alignItems={{ base: 'flex-end', md: 'flex-start' }}
-          mt={{ base: 20, md: 12 }}
-          ml={{ base: '0%', md: '25%' }}
+          mt={{ base: 0, md: 12 }}
+          ml={{ base: '15%', md: '25%' }}
         >
           <Image
             className="hero-bg1"
@@ -156,15 +157,15 @@ export default function Hero() {
             aria-hidden="true"
             draggable={false}
             zIndex={1}
-            w={{ base: '1650px', md: '30vw' }}
+            w={{ base: '1750px', md: '30vw' }}
             h={{ base: '800px', md: 'auto' }}
-            objectFit={{ base: 'contain', md: 'contain' }}
-            objectPosition={{ base: 'center top', md: 'center top' }}
-            opacity={{ base: 0.21, lg: 0.20 }}
+            objectFit={{ base: 'cover', md: 'contain' }}
+            objectPosition={{ base: 'center', md: 'center top' }}
+            opacity={{ base: 0.27, lg: 0.20 }}
             filter="grayscale(100%) contrast(1.05)"
             sx={photoFadeSx}
             mr={{ base: '-550px', md: '-500px' }}
-            mb={{ base: '-100px', md: 0 }}
+            mb={{ base: '170px', md: 0 }}
           />
           <Image
             className="hero-bg2"
@@ -177,11 +178,11 @@ export default function Hero() {
             h={{ base: 'auto', md: 'auto' }}
             objectFit={{ base: 'cover', md: 'contain' }}
             objectPosition={{ base: 'center', md: 'center top' }}
-            opacity={{ base: 0.21, lg: 0.20 }}
+            opacity={{ base: 0.45, lg: 0.20 }}
             filter="grayscale(100%) contrast(1.05)"
             sx={photoFadeSx}
             ml={{ base: '210px', md: 40 }}
-            mb={{ base: -20, md: 0 }}
+            mb={{ base: -10, md: 0 }}
           />
         </Box>
         
@@ -191,8 +192,8 @@ export default function Hero() {
           position="absolute"
           inset={0}
           zIndex={{base: 3, md: 5,  lg:9}}
-          pl={{ base: '2%', lg: '12%' }}
-          pt={{ base: '23%', lg: '5%' }}
+          pl={{ base: '0%', sm: '5%', md: '10%', lg: '12%' }}
+          pt={{ base: '15%', sm: '0%', md: '2%', lg: '4%' }}
           display="flex"
           justifyContent={{ base: 'flex-start', lg: 'flex-start' }}
           alignItems={{ base: 'flex-start', lg: 'flex-start' }}
@@ -200,15 +201,15 @@ export default function Hero() {
         >
           <Box
             ref={photoRef}
-            h={{ base: '87vh', lg: '90vh' }}                               
+            h={{ base: '87vh', sm: '90vh', md: '90vh', lg: '90vh' }}
             style={{ clipPath: 'inset(100% 0 0 0)', opacity: 0 }}
           >
             <Image
               className="player-photo"
               src={playerData.image}
               alt={`${playerData.displayName}, ${playerData.position.toLowerCase()} profesional de ${playerData.currentClub}`}
-              h={{ base: '100%', lg: '100%' }}
-              w={{ base: '68vw', lg: '30vw' }}
+              h={{ base: '100%', sm: '90vh', md: '90vh', lg: '90vh' }}
+              w={{ base: '600px', sm: '50vw', md: '40vw', lg: '30vw' }}
               objectFit="contain"
               objectPosition="bottom center"
               draggable={false}
@@ -227,7 +228,7 @@ export default function Hero() {
           flexDir="column"
           alignItems={{ base: 'center', md: 'flex-start' }}
           justifyContent={{ base: 'flex-start', md: 'center' }}
-          pt={{ base: '30%', lg: '19%' }}
+          pt={{ base: '57%', lg: '19%' }}
           ml={{ base: 0, md: '37%' }}
         >
           <Flex 
@@ -255,12 +256,13 @@ export default function Hero() {
               </Text>            
 
             <Text
+              className="player-fullname"
               ref={line2Ref}
               as="span"
               display="block"
               fontFamily='Nippo'
               fontWeight="bold"
-              fontSize={{ base: '22vw', md: '16vw', lg: '10vw' }}
+              fontSize={{ base: '25vw', md: '16vw', lg: '10vw' }}
               letterSpacing="2px"
               color="transparent"
               lineHeight={0.9}
@@ -279,8 +281,8 @@ export default function Hero() {
           className="player-info"
           position="absolute"
           bottom={{ base: 'auto', lg: '20%' }}
-          left={{ base: '70%', lg: '37%' }}
-          top={{ base: '52%', lg: '38%' }}
+          left={{ base: '5%', lg: '37%' }}
+          top={{ base: '62%', lg: '38%' }}
           zIndex={15}
         >
           <PlayerPanel />

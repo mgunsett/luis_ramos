@@ -55,7 +55,7 @@ export function VideoCard({ video, index = 0, onOpen }) {
           position="relative"
           overflow="hidden"
           bg="#0c0d0d"
-          borderRadius="16px"
+          borderRadius="5px"
           boxShadow="inset 0 0 0 1px rgba(255,255,255,0.08)"
         >
           {/* cover (Instagram no permite autoplay en iframe, se mantiene el cover con zoom) */}

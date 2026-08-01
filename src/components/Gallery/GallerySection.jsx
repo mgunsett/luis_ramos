@@ -45,7 +45,7 @@ function Lightbox({ photo, onClose, onPrev, onNext }) {
         src={photo.src} alt={photo.alt}
         maxH="78vh" maxW="90vw"
         objectFit="contain"
-        borderRadius="12px"
+        borderRadius="5px"
         initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -120,7 +120,7 @@ function GalleryCard({ photo, offset, abs, cardW, spacing, total, index, onFocus
         w={{ base: '200px', md: '100%' }} 
         h="100%"
         overflow="hidden"
-        borderRadius={{ base: '18px', md: '10px' }}
+        borderRadius='5px'
         border="1px solid"
         borderColor={isCenter ? 'brand.amber' : 'brand.amber2'}
         boxShadow={isCenter

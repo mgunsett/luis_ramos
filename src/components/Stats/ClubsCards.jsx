@@ -23,7 +23,7 @@ function ClubCard({ club, index, isActive }) {
       bg="brand.dark"
       border="1px solid"
       borderColor={isActive ? 'brand.amber' : 'brand.amberLight'}
-      borderRadius="14px"
+      borderRadius="5px"
       overflow="hidden"
       position="relative"
       transition="transform 0.35s, border-color 0.35s, box-shadow 0.35s"
@@ -223,7 +223,7 @@ export function ClubsCards() {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 'full',
+    borderRadius: '5px',
     border: '1px solid',
     borderColor: 'brand.amber',
     color: 'brand.bone',
