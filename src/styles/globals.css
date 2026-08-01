@@ -30,27 +30,27 @@
 
 @media screen and (max-width: 390px){
   .player-photo-container {
-    padding-top: 40px !important;
+    padding-top: 20px !important;
     padding-left: 2px !important;
   }
   .player-photo { 
-    width: 390px !important;
+    width: 360px !important;
     max-width: none !important;
   }
   .player-number {
     font-size: 90px !important;
   }
   .player-name-container {
-    top: 85px !important;
+    top: -35px !important;
   }
   .player-name {
     font-size: 47px !important;
   }
   .player-fullname {
-    font-size: 90px !important;
+    font-size: 97px !important;
   }
   .player-info {
-    top: 490px !important;
+    top: 400px !important;
     left: 20px !important;
   }
   #player-info-text {
@@ -64,12 +64,16 @@
     -webkit-mask-image: linear-gradient(black 20%, transparent);
   } */
   .hero-bg1 {
-    margin-left: 30px !important;
+    margin-left: -20px !important;
     margin-bottom: 190px !important;
     width: 400px !important;
     height: 600px !important;
   }
   .hero-bg2 {
     filter: grayscale(100%) contrast(1.9) !important;
+    margin-left: -20px !important;
+    margin-bottom: 190px !important;
+    width: 400px !important;
+    height: 500px !important;
   }
 }
