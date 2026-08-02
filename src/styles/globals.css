@@ -41,7 +41,7 @@
     font-size: 90px !important;
   }
   .player-name-container {
-    top: 40px !important;
+    top: 60px !important;
   }
   .player-name {
     font-size: 47px !important;
@@ -50,7 +50,7 @@
     font-size: 97px !important;
   }
   .player-info {
-    top: 400px !important;
+    top: 480px !important;
     left: 20px !important;
   }
   #player-info-text {
