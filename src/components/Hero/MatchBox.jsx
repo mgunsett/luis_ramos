@@ -34,8 +34,8 @@ function MatchSlot({ data, label, labelColor }) {
       <Flex align="center" justify="space-between" gap={2}>
         <VStack spacing={1} align="center" flex={1}>
           <Shield src={home.shield} name={home.name} />
-          <Text fontFamily="mono" fontSize="9px" color="brand.bone" textTransform="uppercase"
-                letterSpacing="wider" textAlign="center" noOfLines={2}>
+          <Text fontFamily="mono" fontSize={{ base: "7px", md: "9px" }} color="brand.bone" textTransform="uppercase"
+                letterSpacing="wider" textAlign="center" noOfLines={1}>
             {home.name}
           </Text>
         </VStack>
@@ -44,18 +44,18 @@ function MatchSlot({ data, label, labelColor }) {
         <Box textAlign="center" px={2}>
           {homeScore !== null && awayScore !== null ? (
             <HStack spacing={1} justify="center">
-              <Text fontFamily="heading" fontSize="2xl" color="brand.amber" lineHeight={1}>
+              <Text fontFamily="heading" fontSize={{ base: "md", md: "xl" }} color="brand.amber" lineHeight={1}>
                 {homeScore}
               </Text>
-              <Text fontFamily="heading" fontSize="lg" color="brand.dorado" lineHeight={1}>
+              <Text fontFamily="heading" fontSize={{ base: "7px", md: "9px" }} color="brand.dorado" lineHeight={1}>
                 —
               </Text>
-              <Text fontFamily="heading" fontSize="2xl" color="brand.amber" lineHeight={1}>
+              <Text fontFamily="heading" fontSize={{ base: "md", md: "xl" }} color="brand.amber" lineHeight={1}>
                 {awayScore}
               </Text>
             </HStack>
           ) : (
-            <Text fontFamily="heading" fontSize="xl" color="brand.amber" letterSpacing="wider">
+            <Text fontFamily="heading" fontSize={{ base: "10px", md: "xl" }} color="brand.amber" letterSpacing="wider">
               VS
             </Text>
           )}
@@ -69,7 +69,7 @@ function MatchSlot({ data, label, labelColor }) {
 
         <VStack spacing={1} align="center" flex={1}>
           <Shield src={away.shield} name={away.name} />
-          <Text fontFamily="mono" fontSize="9px" color="brand.bone" textTransform="uppercase"
+          <Text fontFamily="mono" fontSize={{ base: "7px", md: "9px" }} color="brand.bone" textTransform="uppercase"
                 letterSpacing="wider" textAlign="center" noOfLines={1}>
             {away.name}
           </Text>
@@ -82,7 +82,7 @@ function MatchSlot({ data, label, labelColor }) {
         </Text>
         {stadium && (
           <Text fontFamily="mono" fontSize="8px" color="brand.gray" letterSpacing="wider"
-                textAlign="right" maxW="120px">
+                textAlign="right" maxW="120px" noOfLines={1}>
             {stadium}
           </Text>
         )}

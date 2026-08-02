@@ -13,10 +13,6 @@ import '../../styles/globals.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const MotionBox = motion(Box)
-
-// Disuelve el borde rectangular de las fotos de fondo. Va sobre cada <Image>
-// (no sobre el contenedor) para que los radios se calculen contra el tamaño
-// real de la foto y el canto quede transparente en cualquier breakpoint.
 const photoFade = 'radial-gradient(56% 48% at 50% 42%, black 32%, transparent 92%)'
 const photoFadeSx = {
   mixBlendMode: 'luminosity',
@@ -157,8 +153,8 @@ export default function Hero() {
             aria-hidden="true"
             draggable={false}
             zIndex={1}
-            w={{ base: '1750px', md: '30vw' }}
-            h={{ base: '800px', md: 'auto' }}
+            w={{ base: '400px', md: '30vw' }}
+            h={{ base: '600px', md: 'auto' }}
             objectFit={{ base: 'cover', md: 'contain' }}
             objectPosition={{ base: 'center', md: 'center top' }}
             opacity={{ base: 0.27, lg: 0.20 }}
@@ -166,6 +162,7 @@ export default function Hero() {
             sx={photoFadeSx}
             mr={{ base: '-550px', md: '-500px' }}
             mb={{ base: '170px', md: 0 }}
+            ml={{ base: '-20px', md: 0 }}
           />
           <Image
             className="hero-bg2"
@@ -174,15 +171,15 @@ export default function Hero() {
             aria-hidden="true"
             draggable={false}
             zIndex={2}
-            w={{ base: '900px', md: '50vw' }}
-            h={{ base: 'auto', md: 'auto' }}
+            w={{ base: '400px', md: '50vw' }}
+            h={{ base: '500px', md: 'auto' }}
             objectFit={{ base: 'cover', md: 'contain' }}
             objectPosition={{ base: 'center', md: 'center top' }}
             opacity={{ base: 0.45, lg: 0.20 }}
-            filter="grayscale(100%) contrast(1.05)"
+            filter={{ base: 'grayscale(100%) contrast(1.9)', md: 'grayscale(100%) contrast(1.05)' }}
             sx={photoFadeSx}
-            ml={{ base: '210px', md: 40 }}
-            mb={{ base: -10, md: 0 }}
+            ml={{ base: '-100px', md: 40 }}
+            mb={{ base: '190px', md: 0 }}
           />
         </Box>
         
@@ -192,8 +189,8 @@ export default function Hero() {
           position="absolute"
           inset={0}
           zIndex={{base: 3, md: 5,  lg:9}}
-          pl={{ base: '0%', sm: '5%', md: '10%', lg: '12%' }}
-          pt={{ base: '15%', sm: '0%', md: '2%', lg: '4%' }}
+          pl={{ base: '6%', sm: '5%', md: '10%', lg: '12%' }}
+          pt={{ base: '12%', sm: '0%', md: '2%', lg: '4%' }}
           display="flex"
           justifyContent={{ base: 'flex-start', lg: 'flex-start' }}
           alignItems={{ base: 'flex-start', lg: 'flex-start' }}
@@ -209,7 +206,7 @@ export default function Hero() {
               src={playerData.image}
               alt={`${playerData.displayName}, ${playerData.position.toLowerCase()} profesional de ${playerData.currentClub}`}
               h={{ base: '100%', sm: '90vh', md: '90vh', lg: '90vh' }}
-              w={{ base: '600px', sm: '50vw', md: '40vw', lg: '30vw' }}
+              w={{ base: '500px', sm: '50vw', md: '40vw', lg: '30vw' }}
               objectFit="contain"
               objectPosition="bottom center"
               draggable={false}
@@ -228,7 +225,7 @@ export default function Hero() {
           flexDir="column"
           alignItems={{ base: 'center', md: 'flex-start' }}
           justifyContent={{ base: 'flex-start', md: 'center' }}
-          pt={{ base: '57%', lg: '19%' }}
+          pt={{ base: '30%', lg: '19%' }}
           ml={{ base: 0, md: '37%' }}
         >
           <Flex 
@@ -262,13 +259,12 @@ export default function Hero() {
               display="block"
               fontFamily='Nippo'
               fontWeight="bold"
-              fontSize={{ base: '25vw', md: '16vw', lg: '10vw' }}
+              fontSize={{ base: '26vw', md: '16vw', lg: '10vw' }}
               letterSpacing="2px"
               color="transparent"
               lineHeight={0.9}
               style={{ opacity: 0 }}
               sx={{ WebkitTextStroke: `2px ${amber}` }}
-              pl={{ base: 2, md: 0 }}
             >
               {playerData.fullName}
             </Text>
@@ -281,8 +277,8 @@ export default function Hero() {
           className="player-info"
           position="absolute"
           bottom={{ base: 'auto', lg: '20%' }}
-          left={{ base: '5%', lg: '37%' }}
-          top={{ base: '62%', lg: '38%' }}
+          left={{ base: '3%', lg: '37%' }}
+          top={{ base: '56%', lg: '38%' }}
           zIndex={15}
         >
           <PlayerPanel />
