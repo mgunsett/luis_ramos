@@ -4,6 +4,9 @@ import { IoMdStats } from 'react-icons/io'
 
 //Hero
 import polaco1 from '@assets/polaco1.webp'
+import heroFestejo from '@assets/hero_festejo.webp'
+//Menú (navbar)
+import retratoMenu from '@assets/retrato_menu.webp'
 
 import peru from '@assets/peru.webp'
 import alianzaLima from '@assets/escudo_alianza.webp'
@@ -56,6 +59,7 @@ export const playerData = {
   position: 'Delantero',
   positionShort: 'DC',
   nationality: 'Peruano',
+  country: 'Perú',
   nationalityFlag: peru,
   age: 26,
   height: '1.83m',
@@ -66,6 +70,12 @@ export const playerData = {
   currentClub: 'Alianza Lima',
   logoCurrentClub: alianzaLima,
   image: polaco1,
+  // Hero (Split con ficha): recorte PNG/WebP con fondo transparente
+  heroCutout: heroFestejo,
+  heroCutoutAlt: 'Luis Ramos festeja con los brazos abiertos y la camiseta 9 de Alianza Lima',
+  // Navbar (Índice a pantalla completa): retrato vertical del menú
+  menuPortrait: retratoMenu,
+  menuPortraitAlt: 'Retrato de Luis Ramos',
   
 
   stats: [

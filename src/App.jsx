@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Box } from '@chakra-ui/react'
 import Navbar from './components/UI/Navbar'
-import Hero from './components/Hero/Hero'
+import HeroSplit from './components/Hero/HeroSplit'
 import StatsSection from './components/Stats/StatsSection'
 import VideosSection from './components/Videos/VideosSection'
 import GallerySection from './components/Gallery/GallerySection'
@@ -14,8 +14,8 @@ function Landing() {
   return (
     <Box as="main" bg="brand.dark" overflowX="hidden">
       <Navbar />
-      <Hero />
-      <Box mt="-100vh" position="relative" zIndex={21}>
+      <HeroSplit />
+      <Box position="relative" zIndex={2}>
         <StatsSection />
         <VideosSection />
         <GallerySection />
