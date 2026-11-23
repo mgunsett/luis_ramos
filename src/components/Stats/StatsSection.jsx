@@ -14,6 +14,8 @@ import { DossierStats } from './DossierStats.jsx'
 import { RingsStats } from './RingsStats.jsx'
 import { ClubsVertical } from './ClubsVertical.jsx'
 import { ClubsCards } from './ClubsCards.jsx'
+import { StatsMarcador } from './StatsMarcador.jsx'
+import { ClubsGrid } from '../Clubs/ClubsGrid.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,14 +23,16 @@ gsap.registerPlugin(ScrollTrigger)
 //  'bento'   → original de 3 columnas (datos / temporada / habilidades)
 //  'radar'   → radar hexagonal con perfil y temporada a los lados
 //  'dossier' → informe de scouting
-//  'anillos' → anillos de progreso circulares (nuevo)
-const STATS_DESIGN = 'anillos'
+//  'anillos' → anillos de progreso circulares
+//  'marcador' → goles gigantes, tablero, ficha y radar con barras al pie (kit claro)
+const STATS_DESIGN = 'marcador'
 
 // Diseño de la trayectoria de clubes:
 //  'carrusel' → línea de tiempo horizontal con arrastre (original)
 //  'vertical' → línea de tiempo vertical alternada (nuevo)
-//  'tarjetas' → vitrina horizontal de fichas con barra de progreso (nuevo)
-const CLUBS_DESIGN = 'tarjetas'
+//  'tarjetas' → vitrina horizontal de fichas con barra de progreso
+//  'grilla'   → grilla de escudos con baldosa de resumen (kit claro)
+const CLUBS_DESIGN = 'grilla'
 
 function BioCard() {
   const BIO = [
@@ -533,18 +537,18 @@ export default function StatsSection() {
       bg="brand.dark"
       pt={{ base: 16, lg: 20 }}
       pb={{ base: 16, lg: 20 }}
-      px={{ base: 2, lg: 10 }}
+      px={{ base: 5, md: 12, lg: 16 }}
       borderTopLeftRadius={{ base: '14px', lg: '22px' }}
       borderTopRightRadius={{ base: '14px', lg: '22px' }}
-      boxShadow="0 -24px 80px rgba(0,0,0,0.65)"
+      boxShadow="0 -24px 60px rgba(10,18,38,0.12)"
     >
       <Box maxW="1400px" mx="auto">
         {/* Header */}
         <Flex align="flex-end" justify="space-between" mb={10}>
           <Box ref={titleRef}>
-            <Text fontFamily='mono' fontSize="10px" color="brand.bone"
-                  textTransform="uppercase" letterSpacing="widest" >
-              {seasonTitle(season, 'Temporada 2025 / 2026')}
+            <Text fontFamily='mono' fontSize="11px" fontWeight="bold" color="brand.dorado"
+                  textTransform="uppercase" letterSpacing="0.28em" >
+              {seasonTitle(season, 'Temporada 2026')}
             </Text>
             <Text as="h2" fontFamily='heading' fontWeight="bold" fontSize={{ base: '4xl', lg: '5xl' }}
                   color="brand.amber" lineHeight={1}>
@@ -557,6 +561,7 @@ export default function StatsSection() {
         {STATS_DESIGN === 'radar' && <RadarStats />}
         {STATS_DESIGN === 'dossier' && <DossierStats />}
         {STATS_DESIGN === 'anillos' && <RingsStats />}
+        {STATS_DESIGN === 'marcador' && <StatsMarcador />}
         {STATS_DESIGN === 'bento' && (
           <Grid
             templateColumns={{ base: '1fr', md: '1fr 1fr', lg: '1fr 1.1fr 1fr' }}
@@ -572,6 +577,7 @@ export default function StatsSection() {
         {CLUBS_DESIGN === 'carrusel' && <ClubTimeline />}
         {CLUBS_DESIGN === 'vertical' && <ClubsVertical />}
         {CLUBS_DESIGN === 'tarjetas' && <ClubsCards />}
+        {CLUBS_DESIGN === 'grilla' && <ClubsGrid />}
       </Box>
     </Box>
   )

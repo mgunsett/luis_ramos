@@ -4,6 +4,9 @@ import { IoMdStats } from 'react-icons/io'
 
 //Hero
 import polaco1 from '@assets/polaco1.webp'
+import heroFestejo from '@assets/hero_festejo.webp'
+//Menú (navbar)
+import retratoMenu from '@assets/retrato_menu.webp'
 
 import peru from '@assets/peru.webp'
 import alianzaLima from '@assets/escudo_alianza.webp'
@@ -56,6 +59,7 @@ export const playerData = {
   position: 'Delantero',
   positionShort: 'DC',
   nationality: 'Peruano',
+  country: 'Perú',
   nationalityFlag: peru,
   age: 26,
   height: '1.83m',
@@ -66,6 +70,12 @@ export const playerData = {
   currentClub: 'Alianza Lima',
   logoCurrentClub: alianzaLima,
   image: polaco1,
+  // Hero (Split con ficha): recorte PNG/WebP con fondo transparente
+  heroCutout: heroFestejo,
+  heroCutoutAlt: 'Luis Ramos festeja con los brazos abiertos y la camiseta 9 de Alianza Lima',
+  // Navbar (Índice a pantalla completa): retrato vertical del menú
+  menuPortrait: retratoMenu,
+  menuPortraitAlt: 'Retrato de Luis Ramos',
   
 
   stats: [
@@ -154,14 +164,18 @@ export const playerData = {
     },
   ],
 
+  // Videos "Temporadas": year = año del video (va gigante), club y clubLogo arriba del reel
   videos: [
     {
       id: 'v2',
       instagramId: 'DaEvRiyOIXL',
       title: 'Alianza Lima \'26',
-      fullTitle: 'Luis Ramos | Jugadas destacadas \'26',
+      fullTitle: 'Jugadas destacadas \'26',
       season: 'Alianza Lima \'26',
-      league: 'LIGA 1 2025',
+      league: 'Liga 1 · Perú',
+      year: '26',
+      club: 'Alianza Lima',
+      clubLogo: alianzaLima,
       thumbnail: image1,
       cover: image1,
       category: 'Highlights',
@@ -170,46 +184,50 @@ export const playerData = {
       id: 'v3',
       instagramId: 'DPaIw9xjjds',
       title: 'Gol America de Cali \'25',
-      fullTitle: 'Luis Ramos | Gol America de Cali \'25',
+      fullTitle: 'Gol con América de Cali \'25',
       season: 'Gol America de Cali \'25',
-      league: 'LIGA 1 2025',
+      league: 'Liga BetPlay · Colombia',
+      year: '25',
+      club: 'América de Cali',
+      clubLogo: escudoAmerica,
       thumbnail: image15,
       cover: image15,
       category: 'Gol',
     },
-    
     {
       id: 'v4',
       instagramId: 'DBXRQzgP80c',
-      title: 'Selection Perú',
-      fullTitle: 'Luis Ramos | Jugadas destacadas',
+      title: 'Selección Perú',
+      fullTitle: 'Jugadas destacadas con Perú',
       season: 'Selección Perú',
       league: 'Eliminatorias',
+      year: '24',
+      club: 'Selección Perú',
+      clubLogo: escudoPeru,
       thumbnail: image5,
       cover: image5,
       category: 'Selección',
     },
   ],
 
-
-
+  // Galería: group = 'u' club actual, 's' selección, 'c' clubes anteriores (los carriles muestran el orden de esta lista)
   gallery: [
-    { id: 1, src: image1, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 2, src: image2, alt: 'Hector Fertoli', caption: 'Universitario',    category: 'Festejo', aspect: 'tall' },
-    { id: 3, src: image3, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Entrenamiento', aspect: 'square' },
-    { id: 4, src: image4, alt: 'Hector Fertoli', caption: 'Universitario',     category: 'Partido', aspect: 'wide' },
-    { id: 5, src: image5, alt: 'Hector Fertoli', caption: 'Universitario',   category: 'Equipo',  aspect: 'wide' },
-    { id: 6, src: image6, alt: 'Hector Fertoli', caption: 'Universitario',       category: 'Retrato', aspect: 'tall' },
-    { id: 7, src: image7, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 8, src: image8, alt: 'Hector Fertoli', caption: 'Universitario',     category: 'Partido', aspect: 'wide' },
-    { id: 9, src: image9, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 10, src: image10, alt: 'Hector Fertoli', caption: 'Universitario',     category: 'Partido', aspect: 'wide' },
-    { id: 11, src: image11, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 12, src: image12, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 13, src: image13, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 14, src: image14, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 15, src: image15, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
-    { id: 16, src: image16, alt: 'Hector Fertoli', caption: 'Universitario', category: 'Partido', aspect: 'wide' },
+    { id: 11, src: image11, alt: 'Levanta el trofeo del Apertura entre fotógrafos', group: 'u', category: 'Alianza Lima' },
+    { id: 13, src: image13, alt: 'Festeja el título con el trofeo en alto', group: 'u', category: 'Alianza Lima' },
+    { id: 8, src: image8, alt: 'Conduce la pelota con la camiseta de Perú', group: 's', category: 'Selección' },
+    { id: 1, src: image1, alt: 'En el campo con la camiseta de Alianza Lima', group: 'u', category: 'Alianza Lima' },
+    { id: 12, src: image12, alt: 'El plantel de Alianza Lima campeón del Apertura', group: 'u', category: 'Alianza Lima' },
+    { id: 14, src: image14, alt: 'Con su familia y el trofeo de campeón', group: 'u', category: 'Alianza Lima' },
+    { id: 3, src: image3, alt: 'Disputa la pelota ante Colombia', group: 's', category: 'Selección' },
+    { id: 4, src: image4, alt: 'En la cancha con la Selección Peruana', group: 's', category: 'Selección' },
+    { id: 5, src: image5, alt: 'Protege la pelota ante un rival de Colombia', group: 's', category: 'Selección' },
+    { id: 6, src: image6, alt: 'Remate en el área con la camiseta de Perú', group: 's', category: 'Selección' },
+    { id: 7, src: image7, alt: 'Controla la pelota en el aire con Perú', group: 's', category: 'Selección' },
+    { id: 2, src: image2, alt: 'Llegada con la delegación de la Selección', group: 's', category: 'Selección' },
+    { id: 9, src: image9, alt: 'Llegada al estadio con la ropa de la Selección', group: 's', category: 'Selección' },
+    { id: 10, src: image10, alt: 'Retrato con la camiseta de la Selección', group: 's', category: 'Selección' },
+    { id: 15, src: image15, alt: 'Festeja un gol con América de Cali', group: 'c', category: 'Clubes anteriores' },
+    { id: 16, src: image16, alt: 'Grita un gol con los brazos abiertos en América de Cali', group: 'c', category: 'Clubes anteriores' },
   ],
 
    press: [

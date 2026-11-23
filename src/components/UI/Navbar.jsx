@@ -6,6 +6,7 @@ import { playerData } from '../../data/playerData'
 import { NavbarBar } from './NavbarBar'
 import { NavbarSplit } from './NavbarSplit'
 import { NavbarMenu } from './NavbarMenu'
+import NavbarIndex from './NavbarIndex'
 
 const MotionBox = motion(Box)
 
@@ -14,7 +15,8 @@ const MotionBox = motion(Box)
 //  'barra'   → barra full-width transparente→sólida, links con subrayado + overlay fullscreen mobile
 //  'split'   → barra con logo centrado y links a los lados + drawer lateral mobile
 //  'menu'    → barra minimal (logo + botón menú) con panel grid desplegable en todas las resoluciones
-const NAV_DESIGN = 'menu'
+//  'indice'  → barra mínima con mix-blend + índice a pantalla completa con el retrato (kit claro, opción 5)
+const NAV_DESIGN = 'indice'
 
 const navLinks = [
   { label: 'Home', href: '#hero'},
@@ -275,8 +277,9 @@ function NavbarClassic() {
   )
 }
 
-// Selector: renderiza la variante según NAV_DESIGN ('clasico' | 'barra' | 'split' | 'menu')
+// Selector: renderiza la variante según NAV_DESIGN ('clasico' | 'barra' | 'split' | 'menu' | 'indice')
 export default function Navbar() {
+  if (NAV_DESIGN === 'indice') return <NavbarIndex />
   if (NAV_DESIGN === 'barra') return <NavbarBar />
   if (NAV_DESIGN === 'split') return <NavbarSplit />
   if (NAV_DESIGN === 'menu')  return <NavbarMenu />
