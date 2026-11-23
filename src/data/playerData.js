@@ -230,25 +230,28 @@ export const playerData = {
     { id: 16, src: image16, alt: 'Grita un gol con los brazos abiertos en América de Cali', group: 'c', category: 'Clubes anteriores' },
   ],
 
-   press: [
+  // Prensa "Nota destacada": la primera va grande con photo de fondo; summary es la bajada
+  press: [
     {
-      media: 'Wins SportsTV',
+      media: 'Win Sports',
       logo:  logo1,
-      title: '🔥Con doblete del peruano Luis Ramos, América venció 2-0 al DIM y se quedó con el primer lugar en #LALIGAxWIN.',
-      date:  'Mayo 2025 ',
+      title: 'Con doblete de Luis Ramos, América venció 2-0 al DIM y quedó primero',
+      summary: 'Dos goles del peruano para el triunfo de América de Cali y la punta de la Liga BetPlay.',
+      photo: image16,
+      date:  'Mayo 2025',
       url:   'https://www.instagram.com/reels/DKGMWJmJsNK/',
     },
     {
-      media: 'Conmebol Sudamericana',
+      media: 'CONMEBOL Sudamericana',
       logo:  logo3,
-      title: '😎👹 ¿Gol? ¡Golazo de Luis Ramos 9⃣ para @americadecali 🇨🇴! COPA SUDAMERICANA',
+      title: '¿Gol? ¡Golazo de Luis Ramos para América de Cali!',
       date:  'Abril 2025',
       url:   'https://www.instagram.com/reels/DINZEdxx7Ci/',
     },
     {
       media: 'Cusco FC',
       logo:  logo2,
-      title: 'Luis Ramos ⚽️ nos regaló un gol que hizo historia, y ahora está nominado al Mejor Gol del Año 2024. 🌟🔥',
+      title: 'Su gol con Cusco, nominado al Mejor Gol del Año 2024',
       date:  'Enero 2025',
       url:   'https://www.instagram.com/reels/DETBg0ehPo3/',
     },

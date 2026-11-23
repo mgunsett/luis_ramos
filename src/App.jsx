@@ -5,7 +5,7 @@ import HeroSplit from './components/Hero/HeroSplit'
 import StatsSection from './components/Stats/StatsSection'
 import VideosTemporadas from './components/Videos/VideosTemporadas'
 import GalleryCarriles from './components/Gallery/GalleryCarriles'
-import PressSection from './components/Press/PressSection'
+import PressDestacada from './components/Press/PressDestacada'
 import ContactTarjetas from './components/Contact/ContactTarjetas'
 import FooterFirma from './components/UI/FooterFirma'
 import AdminPage from './pages/AdminPage'
@@ -19,7 +19,7 @@ function Landing() {
         <StatsSection />
         <VideosTemporadas />
         <GalleryCarriles />
-        <PressSection />
+        <PressDestacada />
         <ContactTarjetas />
         <FooterFirma />
       </Box>
