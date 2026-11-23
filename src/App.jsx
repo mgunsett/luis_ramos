@@ -3,11 +3,11 @@ import { Box } from '@chakra-ui/react'
 import Navbar from './components/UI/Navbar'
 import HeroSplit from './components/Hero/HeroSplit'
 import StatsSection from './components/Stats/StatsSection'
-import VideosSection from './components/Videos/VideosSection'
-import GallerySection from './components/Gallery/GallerySection'
+import VideosTemporadas from './components/Videos/VideosTemporadas'
+import GalleryCarriles from './components/Gallery/GalleryCarriles'
 import PressSection from './components/Press/PressSection'
-import ContactSection from './components/Contact/ContactSection'
-import Footer from './components/UI/Footer'
+import ContactTarjetas from './components/Contact/ContactTarjetas'
+import FooterFirma from './components/UI/FooterFirma'
 import AdminPage from './pages/AdminPage'
 
 function Landing() {
@@ -17,11 +17,11 @@ function Landing() {
       <HeroSplit />
       <Box position="relative" zIndex={2}>
         <StatsSection />
-        <VideosSection />
-        <GallerySection />
+        <VideosTemporadas />
+        <GalleryCarriles />
         <PressSection />
-        <ContactSection />
-        <Footer />
+        <ContactTarjetas />
+        <FooterFirma />
       </Box>
     </Box>
   )
