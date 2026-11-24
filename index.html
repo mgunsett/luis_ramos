@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="theme-color" content="#F4F6FB" />
+    <meta name="color-scheme" content="light" />
 
     <!-- SEO básico -->
-     <link rel="icon" href="/favicon.svg " />
-    <title>Luis Ramos | Jugador Profesional </title>
-    <meta name="description" content="Sitio oficial de Luis Ramos, jugador profesional delantero de Alianza Lima. Estadísticas, highlights, galería y contacto profesional." />
-    <meta name="keywords" content="Luis Ramos, jugador profesional, fútbol, goles, highlights" />
+    <title>Luis Ramos | Delantero de Alianza Lima y la Selección Peruana</title>
+    <meta name="description" content="Sitio oficial de Luis Ramos, delantero peruano de Alianza Lima y la Selección Peruana. Estadísticas, trayectoria, goles en video, fotos, prensa y contacto." />
     <meta name="author" content="Luis Ramos" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://luis-ramos.netlify.app/" />
-    
-    <!-- Open Graph -->
+
+    <!-- Íconos (logo del navbar: LR_) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Luis Ramos — Jugador Profesional" />
-    <meta property="og:description" content="Estadísticas, highlights y galería del jugador profesional Luis Ramos delantero de Alianza Lima." />
+    <meta property="og:site_name" content="Luis Ramos" />
+    <meta property="og:locale" content="es_PE" />
     <meta property="og:url" content="https://luis-ramos.netlify.app/" />
-    <meta property="og:image" content="https://luis-ramos.netlify.app/og-image.webp" />
-    <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="Luis Ramos — Sitio Oficial" />
+    <meta property="og:title" content="Luis Ramos | Delantero de Alianza Lima y la Selección Peruana" />
+    <meta property="og:description" content="Estadísticas, trayectoria, goles en video, fotos, prensa y contacto del delantero peruano de Alianza Lima." />
+    <meta property="og:image" content="https://luis-ramos.netlify.app/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://luis-ramos.netlify.app/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Luis Ramos festeja con la camiseta 9 de Alianza Lima, junto a su nombre y su posición" />
+    <meta property="profile:first_name" content="Luis" />
+    <meta property="profile:last_name" content="Ramos" />
+    <meta property="profile:username" content="luisramos_09" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Luis Ramos — Jugador Profesional" />
-    <meta name="twitter:description" content="Sitio oficial del jugador profesional Luis Ramos delantero de Alianza Lima. Estadísticas, highlights y contacto." />
-    <meta name="twitter:image" content="https://luis-ramos.netlify.app/og-image.webp" />
+    <meta name="twitter:title" content="Luis Ramos | Delantero de Alianza Lima y la Selección Peruana" />
+    <meta name="twitter:description" content="Estadísticas, trayectoria, goles en video, fotos, prensa y contacto del delantero peruano de Alianza Lima." />
+    <meta name="twitter:image" content="https://luis-ramos.netlify.app/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Luis Ramos festeja con la camiseta 9 de Alianza Lima, junto a su nombre y su posición" />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Datos estructurados: sitio + página de perfil + persona -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Luis Ramos",
-      "alternateName": "Luis Ramos",
-      "jobTitle": "Futbolista Profesional",
-      "description": "Delantero peruano que actualmente juega en Alianza Lima, Liga 1." ,
-      "nationality": {
-        "@type": "Country",
-        "name": "Perú"
-      },
-      "birthDate": "1994-12-03",
-      "birthPlace": {
-        "@type": "Place",
-        "name": "Trujillo, Perú"
-      },
-      "height": "1.74 m",
-      "weight": "67 kg",
-      "affiliation": {
-        "@type": "SportsTeam",
-        "name": "Alianza Lima",
-        "sport": "Fútbol"
-      },
-      "url": "https://luis-ramos.netlify.app/",
-      "sameAs": [
-        "https://www.instagram.com/luis.ramos/",
-        "https://www.transfermarkt.com.ar/luis-ramos/profil/spieler/337921"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://luis-ramos.netlify.app/#website",
+          "url": "https://luis-ramos.netlify.app/",
+          "name": "Luis Ramos",
+          "inLanguage": "es-PE"
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://luis-ramos.netlify.app/#profile",
+          "url": "https://luis-ramos.netlify.app/",
+          "name": "Luis Ramos | Delantero de Alianza Lima y la Selección Peruana",
+          "inLanguage": "es-PE",
+          "isPartOf": { "@id": "https://luis-ramos.netlify.app/#website" },
+          "primaryImageOfPage": "https://luis-ramos.netlify.app/og-image.jpg",
+          "mainEntity": { "@id": "https://luis-ramos.netlify.app/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://luis-ramos.netlify.app/#person",
+          "name": "Luis Ramos",
+          "givenName": "Luis",
+          "familyName": "Ramos",
+          "jobTitle": "Futbolista profesional, delantero",
+          "description": "Delantero peruano de Alianza Lima y la Selección Peruana. Campeón del Torneo Apertura 2026 con Alianza Lima; pasó por América de Cali, Cusco FC y Los Chankas.",
+          "image": "https://luis-ramos.netlify.app/og-image.jpg",
+          "url": "https://luis-ramos.netlify.app/",
+          "birthDate": "1999-12-13",
+          "birthPlace": { "@type": "Place", "name": "Trujillo, Perú" },
+          "nationality": { "@type": "Country", "name": "Perú" },
+          "height": { "@type": "QuantitativeValue", "value": 1.83, "unitCode": "MTR" },
+          "weight": { "@type": "QuantitativeValue", "value": 75, "unitCode": "KGM" },
+          "affiliation": { "@type": "SportsTeam", "name": "Alianza Lima", "sport": "Fútbol" },
+          "memberOf": [
+            { "@type": "SportsTeam", "name": "Alianza Lima", "sport": "Fútbol" },
+            { "@type": "SportsTeam", "name": "Selección Peruana de Fútbol", "sport": "Fútbol" }
+          ],
+          "award": ["Torneo Apertura 2026 (Alianza Lima)"],
+          "sameAs": [
+            "https://www.instagram.com/luisramos_09/",
+            "https://www.transfermarkt.com.ar/luis-ramos/profil/spieler/687529"
+          ]
+        }
       ]
     }
     </script>
@@ -75,6 +110,10 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Luis Ramos</h1>
+      <p>Sitio oficial de Luis Ramos, delantero peruano de Alianza Lima y la Selección Peruana. Activá JavaScript para ver estadísticas, trayectoria, videos, fotos, prensa y contacto.</p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
