@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://luisramos.com/sitemap.xml
+Sitemap: https://luisramos9.com/sitemap.xml
