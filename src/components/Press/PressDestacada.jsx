@@ -6,9 +6,6 @@ import { playerData } from '../../data/playerData'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Prensa "Nota destacada" (kit claro): la primera nota grande con foto de fondo
-// y las demás al costado, numeradas. Los datos salen de playerData.press
-// (outlet o media, title, date, url, logo y, opcionales, summary y photo).
 
 const EASE = 'cubic-bezier(0.23,1,0.32,1)'
 
@@ -127,23 +124,48 @@ export default function PressSection() {
               minH={{ base: '200px', lg: '260px' }}
               p={{ base: '22px', lg: 7 }}
               position="relative"
+              overflow="hidden"
               bg="brand.brown"
               border="1px solid"
               borderColor="brand.amberLight"
               color="brand.bone"
               transition={`background .3s ${EASE}`}
-              sx={{ '@media (hover: hover) and (pointer: fine)': { '&:hover': { bg: '#E9EDF5' } } }}
+              sx={{
+                '@media (hover: hover) and (pointer: fine)': {
+                  '&:hover': { bg: '#E9EDF5' },
+                  '&:hover .press-mark': { opacity: 0.16, transform: 'translateY(-50%) scale(1.05)' },
+                },
+              }}
             >
-              <Text aria-hidden="true" display={{ base: 'none', md: 'block' }} position="absolute" top="18px" right="22px" fontFamily="heading" fontWeight="bold" fontSize="64px" lineHeight={1} color="transparent" sx={{ WebkitTextStroke: '1px #17285a40' }}>
-                {String(i + 2).padStart(2, '0')}
-              </Text>
-              <Source note={note} />
-              <Text as="h3" mt={3} fontFamily="heading" fontWeight="bold" fontSize={{ base: '18px', lg: 'clamp(18px, 1.6vw, 24px)' }} lineHeight={1.12} textTransform="uppercase">
-                {note.title}
-              </Text>
-              <Text mt={4} fontSize="11px" fontWeight="bold" letterSpacing="0.18em" textTransform="uppercase" color="brand.dorado">
-                Leer ↗
-              </Text>
+              {/* Logo del medio de fondo, en blanco y negro */}
+              {note.logo && (
+                <Image
+                  className="press-mark"
+                  src={note.logo}
+                  alt=""
+                  aria-hidden="true"
+                  position="absolute"
+                  top="50%"
+                  right={{ base: '-30px', lg: '-40px' }}
+                  boxSize={{ base: '170px', lg: '230px' }}
+                  objectFit="contain"
+                  opacity={0.1}
+                  filter="grayscale(1)"
+                  transform="translateY(-50%)"
+                  transition={`opacity .4s ${EASE}, transform .7s ${EASE}`}
+                  pointerEvents="none"
+                />
+              )}
+             
+              <Box position="relative">
+                <Source note={note} />
+                <Text as="h3" mt={3} fontFamily="heading" fontWeight="bold" fontSize={{ base: '18px', lg: 'clamp(18px, 1.6vw, 24px)' }} lineHeight={1.12} textTransform="uppercase">
+                  {note.title}
+                </Text>
+                <Text mt={4} fontSize="11px" fontWeight="bold" letterSpacing="0.18em" textTransform="uppercase" color="brand.dorado">
+                  Leer ↗
+                </Text>
+              </Box>
             </Box>
           ))}
         </Grid>

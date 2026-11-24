@@ -7,10 +7,6 @@ import useSeasonStats from '../../hooks/useSeasonStats'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Estadísticas "Marcador": los goles en un bloque azul gigante, el resto de la
-// temporada en un tablero, la ficha en una fila y, al pie, un radar chico con
-// los 6 atributos junto a las barras segmentadas.
-
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v)
 const fixed = (label) => playerData.seasonStats.find((s) => s.label === label)?.value
 
@@ -162,9 +158,7 @@ export function StatsMarcador() {
           <Text fontWeight="bold" lineHeight={0.78} letterSpacing="-0.02em" fontSize={{ base: '44vw', md: 'clamp(150px, 24vw, 340px)' }} sx={{ fontVariantNumeric: 'tabular-nums' }}>
             {main.value}
           </Text>
-          <Text fontSize="15px" fontWeight={500} maxW="30ch">
-            La cifra que lo define: goles en la temporada con la camiseta de {playerData.currentClub}.
-          </Text>
+          
         </Flex>
 
         <Grid templateColumns="repeat(2, 1fr)" gap="2px">

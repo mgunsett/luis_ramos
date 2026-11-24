@@ -47,17 +47,45 @@ function scrollTo(href) {
   else target.scrollIntoView({ behavior: 'smooth' })
 }
 
-function MatchCell({ label, accent, title, meta }) {
+const CREST_SIZE = { base: '22px', lg: '30px' }
+
+// Escudo del equipo; si no hay imagen cargada, el código de 3 letras
+function Crest({ team }) {
+  if (team?.shield) {
+    return (
+      <Image src={team.shield} alt={`Escudo de ${team.name}`} title={team.name}
+        boxSize={CREST_SIZE} objectFit="contain" flexShrink={0} />
+    )
+  }
+  return (
+    <Text as="span" fontSize={{ base: '12px', lg: '14px' }} fontWeight="700" color="brand.amber"
+      letterSpacing="0.06em" title={team?.name}>
+      {code(team?.name)}
+    </Text>
+  )
+}
+
+function MatchLine({ match, showScore }) {
+  return (
+    <Flex align="center" gap={{ base: 2, lg: 3 }} h={CREST_SIZE}>
+      <Crest team={match.home} />
+      <Text fontSize={{ base: '14px', lg: '18px' }} fontWeight="700" color="brand.amber"
+        letterSpacing="0.06em" sx={{ fontVariantNumeric: 'tabular-nums' }} whiteSpace="nowrap">
+        {showScore ? `${match.homeScore}–${match.awayScore}` : 'vs'}
+      </Text>
+      <Crest team={match.away} />
+    </Flex>
+  )
+}
+
+function MatchCell({ label, accent, match, showScore, meta }) {
   return (
     <Box px={{ base: 3, lg: '18px' }} py={{ base: '10px', lg: '14px' }} minW={0}>
       <Text fontSize="9px" fontWeight="700" letterSpacing="0.24em" textTransform="uppercase"
         color={accent ? 'brand.dorado' : 'brand.gray'} mb="6px">
         {label}
       </Text>
-      <Text fontSize={{ base: '14px', lg: '18px' }} fontWeight="700" color="brand.amber"
-        letterSpacing="0.06em" sx={{ fontVariantNumeric: 'tabular-nums' }} noOfLines={1}>
-        {title}
-      </Text>
+      <MatchLine match={match} showScore={showScore} />
       <Text mt="4px" fontSize="10px" color="brand.gray" letterSpacing="0.1em" textTransform="uppercase" noOfLines={2}>
         {meta}
       </Text>
@@ -88,9 +116,8 @@ function MatchCard({ last, next }) {
       {last && (
         <MatchCell
           label="Último"
-          title={played
-            ? `${code(last.home.name)} ${last.homeScore}–${last.awayScore} ${code(last.away.name)}`
-            : `${code(last.home.name)} vs ${code(last.away.name)}`}
+          match={last}
+          showScore={played}
           meta={last.date}
         />
       )}
@@ -99,7 +126,7 @@ function MatchCard({ last, next }) {
           <MatchCell
             label="Próximo"
             accent
-            title={`${code(next.home.name)} vs ${code(next.away.name)}`}
+            match={next}
             meta={[next.date, next.stadium].filter(Boolean).join(' · ')}
           />
         </Box>

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { Box, Flex, Grid, Text, Image, AspectRatio } from '@chakra-ui/react'
+import { Box, Flex, Grid, Text, Image, AspectRatio, Portal } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FiX } from 'react-icons/fi'
 import { FaPlay } from 'react-icons/fa'
@@ -171,7 +171,8 @@ export default function VideosSection() {
         </Grid>
       </Box>
 
-      {/* ── Modal fullscreen (embed de Instagram) ── */}
+      {/* ── Modal fullscreen (embed de Instagram), en un portal para quedar sobre el navbar ── */}
+      <Portal>
       <AnimatePresence>
         {openVideo && (
           <MotionBox
@@ -191,6 +192,7 @@ export default function VideosSection() {
           >
             <Box
               as="button"
+              type="button"
               position="absolute"
               top={{ base: 16, md: 14 }}
               right={{ base: 4, md: 60 }}
@@ -238,6 +240,7 @@ export default function VideosSection() {
           </MotionBox>
         )}
       </AnimatePresence>
+      </Portal>
     </Box>
   )
 }

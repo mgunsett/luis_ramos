@@ -104,6 +104,7 @@ export const playerData = {
       years:   '2026 — Actualidad',
       logo:    alianzaLima,
       titles:  ['Torneo Apertura 2026'],
+      goals:   null,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -112,6 +113,7 @@ export const playerData = {
       years:   '2024 — Actualidad',
       logo:    escudoPeru,
       titles:  [],
+      goals:   null,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -120,6 +122,7 @@ export const playerData = {
       years:   '2025',
       logo:    escudoAmerica,
       titles:  [],
+      goals:   12,  // goles con el club (todas las competencias)
       info:    'Préstamo',
     },
     {
@@ -128,6 +131,7 @@ export const playerData = {
       years:   '2024',
       logo:    escudoCusco,
       titles:  [],
+      goals:   11,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -136,6 +140,7 @@ export const playerData = {
       years:   '2023',
       logo:    escudoChankas,
       titles:  [],
+      goals:   19,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -144,6 +149,7 @@ export const playerData = {
       years:   '2022 — 2023',
       logo:    escudodepMunicipal,
       titles:  [],
+      goals:   2,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -152,6 +158,7 @@ export const playerData = {
       years:   '2021 — 2022',
       logo:    escudoLlacuabamba,
       titles:  [],
+      goals:   10,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
@@ -160,6 +167,7 @@ export const playerData = {
       years:   '2019 — 2020',
       logo:    escudoMannucci,
       titles:  [],
+      goals:   null,  // goles con el club (todas las competencias)
       info:    'Debút profesional',
     },
   ],

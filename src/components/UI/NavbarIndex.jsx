@@ -46,6 +46,18 @@ function useActiveSection() {
   return active
 }
 
+// true en cuanto la página dejó el tope
+function useScrolled(offset = 8) {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > offset)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [offset])
+  return scrolled
+}
+
 const contacts = [
   ...playerData.contact.map((c) => ({ role: c.title, name: c.label, url: c.url })),
   ...playerData.socialMedia.filter((s) => s.label === 'Instagram').map((s) => ({ role: 'Instagram', name: s.handle, url: s.url })),
@@ -54,6 +66,7 @@ const contacts = [
 export default function NavbarIndex() {
   const [open, setOpen] = useState(false)
   const active = useActiveSection()
+  const scrolled = useScrolled()
   const reduce = useReducedMotion()
   const btnRef = useRef(null)
 
@@ -83,6 +96,25 @@ export default function NavbarIndex() {
 
   return (
     <>
+      {/* Capa de blur aparte: la barra usa mix-blend difference y no puede llevarlo */}
+      <Box
+        aria-hidden="true"
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        h={{ base: '76px', lg: '88px' }}
+        zIndex={999}
+        pointerEvents="none"
+        bg="blackAlpha.200"
+        backdropFilter="blur(10px)"
+        opacity={scrolled && !open ? 1 : 0}
+        transition={reduce ? 'none' : 'opacity .4s cubic-bezier(0.23,1,0.32,1)'}
+        sx={{
+          WebkitMaskImage: 'linear-gradient(to bottom, #000 60%, transparent)',
+          maskImage: 'linear-gradient(to bottom, #000 60%, transparent)',
+        }}
+      />
       <Flex
         as="header"
         position="fixed"

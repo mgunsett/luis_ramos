@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { Box, Flex, Text, Image } from '@chakra-ui/react'
+import { Box, Flex, Text, Portal } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { gsap } from 'gsap'
@@ -158,9 +158,12 @@ export default function GalleryCarriles() {
         ))}
       </Flex>
 
-      <AnimatePresence>
-        {open !== null && <Viewer photos={photos} index={open} onClose={close} onMove={move} />}
-      </AnimatePresence>
+      {/* En un portal: así queda por encima del navbar fijo */}
+      <Portal>
+        <AnimatePresence>
+          {open !== null && <Viewer photos={photos} index={open} onClose={close} onMove={move} />}
+        </AnimatePresence>
+      </Portal>
     </Box>
   )
 }

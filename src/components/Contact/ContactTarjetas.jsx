@@ -7,9 +7,6 @@ import { playerData } from '../../data/playerData'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Contacto "Tarjetas grandes": 2x2, toda la tarjeta es el link. Arriba las
-// redes (Instagram y Transfermarkt), abajo el representante (en azul) y marketing.
-// De fondo, el logo de cada una en gris y tenue. Kit claro.
 
 const EASE = 'cubic-bezier(0.23,1,0.32,1)'
 const first = playerData.name.charAt(0) + playerData.name.slice(1).toLowerCase()
@@ -19,15 +16,28 @@ function buildCards() {
   const [rep, mkt] = playerData.contact
   return [
     ig && { role: `Directo con ${first}`, name: ig.label, sub: ig.handle, url: ig.url, icon: FaInstagram },
-    tm && { role: 'Ficha profesional', name: 'Transfermarkt', sub: 'Trayectoria y valor de mercado', url: tm.url, img: tm.image },
-    rep && { role: rep.title, name: rep.label, sub: `${rep.handle} · Clubes y transferencias`, url: rep.url, img: rep.image, highlight: true },
-    mkt && { role: mkt.title, name: mkt.label, sub: `${mkt.handle} · Marcas y acciones comerciales`, url: mkt.url, img: mkt.image },
+    tm && { role: 'Ficha profesional', name: 'Transfermarkt', sub: 'Estadísticas ', url: tm.url, img: tm.image, filled: true },
+    rep && { role: rep.title, name: rep.label, sub: `${rep.handle}`, url: rep.url, img: rep.image, highlight: true, badgeBg: 'brand.amberDark', logoScale: 1.3 },
+    // Logo con texto blanco: necesita el círculo oscuro
+    mkt && { role: mkt.title, name: mkt.label, sub: `${mkt.handle}`, url: mkt.url, img: mkt.image, darkBadge: true },
   ].filter(Boolean)
 }
 
+// filled: logo con fondo propio (ej. el cuadrado de Transfermarkt) → cubre el círculo
 function Logo({ card, size }) {
   if (card.icon) return <Box as={card.icon} fontSize={size} />
-  return <Image src={card.img} alt="" w="100%" h="100%" objectFit="contain" />
+  return (
+    <Image src={card.img} alt="" w="100%" h="100%" objectFit={card.filled ? 'cover' : 'contain'}
+      // un poco más grande para tapar el margen y las esquinas redondeadas del archivo
+      transform={card.filled ? 'scale(1.12)' : card.logoScale ? `scale(${card.logoScale})` : undefined} />
+  )
+}
+
+// Logo de fondo: silueta de un solo color, salvo los "filled", que en silueta
+// quedarían como un bloque liso; esos van en escala de grises
+function markFilter(card, hl) {
+  if (card.filled) return 'grayscale(1) contrast(1.2)'
+  return hl ? 'brightness(0) invert(1)' : 'brightness(0)'
 }
 
 function ContactCard({ card }) {
@@ -67,15 +77,15 @@ function ContactCard({ card }) {
         display="grid"
         placeItems="center"
         pointerEvents="none"
-        opacity={hl ? 0.22 : 0.08}
+        opacity={hl ? 0.14 : card.filled ? 0.1 : 0.07}
         color={hl ? 'white' : 'brand.amber'}
-        sx={{ img: { filter: hl ? 'grayscale(1) brightness(.4)' : 'grayscale(1) brightness(1.6)', mixBlendMode: hl ? 'multiply' : 'normal' } }}
+        sx={{ img: { filter: markFilter(card, hl), objectFit: 'contain' } }}
       >
         <Logo card={card} size={{ base: '140px', md: '190px' }} />
       </Box>
 
       <Flex justify="space-between" align="flex-start" position="relative">
-        <Box boxSize="64px" borderRadius="full" bg={hl ? 'white' : 'brand.bgRef'} display="grid" placeItems="center" color="brand.amber" p={card.icon ? 0 : '7px'} overflow="hidden">
+        <Box boxSize="64px" borderRadius="full" bg={card.badgeBg || (card.darkBadge ? 'brand.amber' : hl ? 'white' : 'brand.bgRef')} border={card.badgeBg ? '1px solid' : undefined} borderColor="whiteAlpha.300" display="grid" placeItems="center" color="brand.amber" p={card.icon || card.filled ? 0 : '4px'} overflow="hidden">
           <Logo card={card} size="28px" />
         </Box>
         <Box className="c-arrow" aria-hidden="true" boxSize="48px" borderRadius="full" border="1.5px solid currentColor" display="grid" placeItems="center" fontSize="18px" transition={`transform .35s ${EASE}`}>

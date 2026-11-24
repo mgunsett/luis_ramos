@@ -7,10 +7,6 @@ import sportfolioWeb from '@assets/logo_sport_dark.webp'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Footer "Firma" (kit claro): escudo, posición y club actual, links, "Volver arriba"
-// y la firma gigante a todo el ancho, con la "O" de RAMOS cambiada por el dorsal.
-// Abajo, derechos y crédito del desarrollador.
-
 const EASE = 'cubic-bezier(0.23,1,0.32,1)'
 const BAR_BG = '#E9EDF5'
 
@@ -97,7 +93,7 @@ export default function FooterFirma() {
         </Flex>
       </Flex>
 
-      <Flex gap={{ base: '18px', md: '26px' }} mt="30px" wrap="wrap">
+      <Flex gap={{ base: '18px', md: '26px' }} mt="30px" wrap="wrap" position="relative" zIndex={1}>
         {links.map((l) => (
           <Link
             key={l.url}
@@ -118,10 +114,12 @@ export default function FooterFirma() {
         ))}
       </Flex>
 
-      {/* Firma gigante: RAM9S */}
+      {/* Firma gigante: RAM9S. Decorativa: con lineHeight 0.74 las letras desbordan
+          hacia arriba y en desktop tapaban los links, por eso no recibe clics */}
       <Text
         ref={wordRef}
         aria-hidden="true"
+        pointerEvents="none"
         mt={{ base: 8, md: 11 }}
         mx="-0.04em"
         fontFamily="heading"

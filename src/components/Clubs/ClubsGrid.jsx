@@ -15,6 +15,8 @@ function linkLabel(club, i) {
   return (club.info || '').replace(/^Deb[uú]t.*/i, 'Debut')
 }
 
+const hasGoals = (club) => Number.isFinite(club.goals)
+
 function ClubTile({ club, index }) {
   const isCur = index === 0
   const label = linkLabel(club, index)
@@ -94,6 +96,16 @@ function ClubTile({ club, index }) {
         <Text mt="6px" fontSize="11px" letterSpacing="0.2em" textTransform="uppercase" color={isCur ? 'whiteAlpha.800' : 'brand.gray'}>
           {club.country}
         </Text>
+        {hasGoals(club) && (
+          <Flex mt={3} align="baseline" gap={2}>
+            <Text fontFamily="heading" fontWeight="bold" fontSize={{ base: '26px', md: '34px' }} lineHeight={0.9} color={isCur ? 'white' : 'brand.dorado'}>
+              {club.goals}
+            </Text>
+            <Text fontSize="10px" fontWeight="bold" letterSpacing="0.2em" textTransform="uppercase" color={isCur ? 'whiteAlpha.800' : 'brand.gray'}>
+              {club.goals === 1 ? 'Gol' : 'Goles'}
+            </Text>
+          </Flex>
+        )}
         {club.titles?.map((t) => (
           <Text key={t} mt="10px" fontSize="12px" color={isCur ? 'white' : 'brand.amber'}>★ {t}</Text>
         ))}
@@ -107,8 +119,11 @@ export function ClubsGrid() {
   const clubs = playerData.clubs
   const countries = new Set(clubs.map((c) => c.country)).size
   const titles = clubs.reduce((a, c) => a + (c.titles?.length || 0), 0)
+  // Goles de toda la carrera: suma de los clubes que tienen el dato cargado
+  const goals = clubs.some(hasGoals) ? clubs.reduce((a, c) => a + (hasGoals(c) ? c.goals : 0), 0) : null
 
   const summary = [
+    goals !== null ? { n: goals, label: goals === 1 ? 'Gol en su carrera' : 'Goles en su carrera', hl: true } : null,
     { n: clubs.length, label: clubs.length === 1 ? 'Club' : 'Clubes' },
     { n: countries, label: countries === 1 ? 'País' : 'Países' },
     titles ? { n: titles, label: titles === 1 ? 'Título' : 'Títulos' } : null,
@@ -169,7 +184,7 @@ export function ClubsGrid() {
         >
           {summary.map((s) => (
             <Flex key={s.label} align="baseline" gap={3}>
-              <Text fontFamily="heading" fontWeight="bold" fontSize={{ base: '38px', md: '52px' }} lineHeight={0.9} color="brand.amber" minW={{ base: '44px', md: '60px' }}>
+              <Text fontFamily="heading" fontWeight="bold" fontSize={{ base: '38px', md: '52px' }} lineHeight={0.9} color={s.hl ? 'brand.dorado' : 'brand.amber'} minW={{ base: '44px', md: '60px' }}>
                 {s.n}
               </Text>
               <Text fontSize="11px" letterSpacing="0.2em" textTransform="uppercase" color="#3D4A68">{s.label}</Text>
