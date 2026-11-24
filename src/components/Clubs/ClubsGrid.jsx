@@ -123,7 +123,7 @@ export function ClubsGrid() {
   const goals = clubs.some(hasGoals) ? clubs.reduce((a, c) => a + (hasGoals(c) ? c.goals : 0), 0) : null
 
   const summary = [
-    goals !== null ? { n: goals, label: goals === 1 ? 'Gol en su carrera' : 'Goles en su carrera', hl: true } : null,
+    goals !== null ? { n: goals, label: goals === 1 ? 'Gol' : 'Goles', hl: true } : null,
     { n: clubs.length, label: clubs.length === 1 ? 'Club' : 'Clubes' },
     { n: countries, label: countries === 1 ? 'País' : 'Países' },
     titles ? { n: titles, label: titles === 1 ? 'Título' : 'Títulos' } : null,
@@ -184,7 +184,7 @@ export function ClubsGrid() {
         >
           {summary.map((s) => (
             <Flex key={s.label} align="baseline" gap={3}>
-              <Text fontFamily="heading" fontWeight="bold" fontSize={{ base: '38px', md: '52px' }} lineHeight={0.9} color={s.hl ? 'brand.dorado' : 'brand.amber'} minW={{ base: '44px', md: '60px' }}>
+              <Text fontFamily="heading" fontWeight="bold" fontSize={{ base: '38px', md: '52px' }} lineHeight={0.9} color={s.hl ? 'brand.dorado' : 'brand.amber'} minW={{ base: '64px', md: '60px' }}>
                 {s.n}
               </Text>
               <Text fontSize="11px" letterSpacing="0.2em" textTransform="uppercase" color="#3D4A68">{s.label}</Text>

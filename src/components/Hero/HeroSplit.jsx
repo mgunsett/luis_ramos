@@ -5,14 +5,6 @@ import { playerData } from '../../data/playerData'
 import useMatches from '../../hooks/useMatches'
 import useSeasonStats from '../../hooks/useSeasonStats'
 
-// ─── Hero "Split con ficha" (kit claro, opción 6) ────────────────────
-// Columna de texto a la izquierda (píldora con dorsal y posición, nombre,
-// club y selección, 4 números de la temporada y botones) y panel del
-// acento en diagonal a la derecha con el dorsal en contorno y el recorte.
-// Abajo a la derecha, la tarjeta con el último y el próximo partido.
-// Mobile: panel arriba; el recorte crece y apoya los pies sobre la tarjeta
-// de partidos, y la parte que queda detrás del texto se funde.
-
 const EASE = 'cubic-bezier(0.23,1,0.32,1)'
 const MATCH_H = '84px' // alto de la tarjeta de partidos en mobile
 

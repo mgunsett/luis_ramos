@@ -3,12 +3,6 @@ import { Box, Flex, Text, Image, Link } from '@chakra-ui/react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { playerData } from '../../data/playerData'
 
-// ─── Navbar "Índice a pantalla completa" (kit claro, opción 5) ───────
-// Barra mínima (iniciales + dorsal, Contacto y MENÚ) con mix-blend
-// difference, así se lee sobre fondos claros y oscuros. El menú abre a
-// pantalla completa: links gigantes numerados con la sección activa en
-// contorno, contactos abajo y el retrato a la derecha (arriba en mobile).
-
 const MotionBox = motion(Box)
 const EASE = [0.23, 1, 0.32, 1]
 
@@ -130,8 +124,8 @@ export default function NavbarIndex() {
         sx={{ mixBlendMode: 'difference' }}
       >
         <Link href="#hero" onClick={(e) => go(e, '#hero')} aria-label={`Inicio · ${playerData.displayName}`}
-          fontWeight="700" fontSize="24px" letterSpacing="0.04em" _hover={{ textDecoration: 'none' }}>
-          {playerData.initials}_{playerData.number}
+          fontWeight="700" fontSize="24px" letterSpacing="0.04em" color="white" _hover={{ textDecoration: 'none' }}>
+          {playerData.initials}_
         </Link>
         <Flex align="center" gap="26px">
           <Link href="#contact" onClick={(e) => go(e, '#contact')} display={{ base: 'none', md: 'block' }}
@@ -213,15 +207,7 @@ export default function NavbarIndex() {
                 )
               })}
 
-              <MotionBox mt={{ base: '22px', lg: '34px' }} display="flex" flexWrap="wrap" gap="10px 28px"
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={t(0.6, 0.6)}>
-                {contacts.map((c) => (
-                  <Box key={c.url}>
-                    <Text fontSize="9px" letterSpacing="0.24em" textTransform="uppercase" color="brand.gray" mb="4px">{c.role}</Text>
-                    <Link href={c.url} isExternal fontSize="12px" fontWeight="700" letterSpacing="0.08em" color="brand.amber">{c.name}</Link>
-                  </Box>
-                ))}
-              </MotionBox>
+              
             </Flex>
 
             <Box position="relative" overflow="hidden" bg="#0A1226" order={{ base: -1, lg: 0 }}
@@ -233,10 +219,8 @@ export default function NavbarIndex() {
               <Flex position="absolute" left={{ base: 5, lg: 8 }} right={{ base: 5, lg: 8 }} bottom={{ base: 4, lg: '30px' }}
                 zIndex={2} color="white" align="flex-end" justify="space-between">
                 <Box>
-                  <Text fontSize="11px" letterSpacing="0.24em" textTransform="uppercase" opacity={0.8}>
-                    {playerData.position} · #{playerData.number}
-                  </Text>
-                  <Text fontWeight="700" textTransform="uppercase" lineHeight={0.9} fontSize={{ base: '34px', lg: '56px' }}>
+                 
+                  <Text fontWeight="700" textTransform="uppercase" lineHeight={0.9} fontSize={{ base: '34px', lg: '36px' }}>
                     {playerData.name}<br />{playerData.fullName}
                   </Text>
                 </Box>

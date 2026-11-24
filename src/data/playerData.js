@@ -35,6 +35,7 @@ import image13 from '@assets/gallery/image13.webp'
 import image14 from '@assets/gallery/image14.webp'
 import image15 from '@assets/gallery/image15.webp'
 import image16 from '@assets/gallery/image16.webp'
+import image17 from '@assets/gallery/image17.webp'
 //Video
 import photoGraph from '@assets/perfil_video.webp'
 //Prensa
@@ -174,26 +175,49 @@ export const playerData = {
 
   // Videos "Temporadas": year = año del video (va gigante), club y clubLogo arriba del reel
   videos: [
+    
     {
-      id: 'v2',
-      instagramId: 'DaEvRiyOIXL',
-      title: 'Alianza Lima \'26',
-      fullTitle: 'Jugadas destacadas \'26',
-      season: 'Alianza Lima \'26',
-      league: 'Liga 1 · Perú',
+      id: 'v3',
+      instagramId: 'DPaIw9xjjds',
+      vimeoId: '1249746855',
+      vimeoHash: '7839244e97',
+      title: 'Gol Alianza \'26',
+      fullTitle: 'Gol con Alianza \'26',
+      season: 'Gol Alianza Lima \'26',
+      league: 'Liga 1 · Colombia',
       year: '26',
       club: 'Alianza Lima',
       clubLogo: alianzaLima,
       thumbnail: image1,
       cover: image1,
+      category: 'Gol',
+    },
+    
+    {
+      id: 'v4',
+      instagramId: 'DBXRQzgP80c',
+      vimeoId: '1249747675',
+      vimeoHash: '313037462e',
+      title: 'Highlights Alianza \'26',
+      fullTitle: 'Highlights con Alianza \'26',
+      season: 'Alianza Lima \'26',
+      league: 'Highlights · Perú',
+      year: '26',
+      club: 'Alianza Lima',
+      clubLogo: alianzaLima,
+      thumbnail: image17,
+      cover: image17,
       category: 'Highlights',
     },
     {
-      id: 'v3',
-      instagramId: 'DPaIw9xjjds',
-      title: 'Gol America de Cali \'25',
+      id: 'v2',
+      instagramId: 'DaEvRiyOIXL',
+      // Vimeo: si está, se usa en lugar de Instagram (modal + preview en hover)
+      vimeoId: '1249711308',
+      vimeoHash: '925aae1ace',
+      title: 'Gol con América de Cali \'25',
       fullTitle: 'Gol con América de Cali \'25',
-      season: 'Gol America de Cali \'25',
+      season: 'Gol con América de Cali \'25',
       league: 'Liga BetPlay · Colombia',
       year: '25',
       club: 'América de Cali',
@@ -201,20 +225,6 @@ export const playerData = {
       thumbnail: image15,
       cover: image15,
       category: 'Gol',
-    },
-    {
-      id: 'v4',
-      instagramId: 'DBXRQzgP80c',
-      title: 'Selección Perú',
-      fullTitle: 'Jugadas destacadas con Perú',
-      season: 'Selección Perú',
-      league: 'Eliminatorias',
-      year: '24',
-      club: 'Selección Perú',
-      clubLogo: escudoPeru,
-      thumbnail: image5,
-      cover: image5,
-      category: 'Selección',
     },
   ],
 
@@ -236,6 +246,7 @@ export const playerData = {
     { id: 10, src: image10, alt: 'Retrato con la camiseta de la Selección', group: 's', category: 'Selección' },
     { id: 15, src: image15, alt: 'Festeja un gol con América de Cali', group: 'c', category: 'Clubes anteriores' },
     { id: 16, src: image16, alt: 'Grita un gol con los brazos abiertos en América de Cali', group: 'c', category: 'Clubes anteriores' },
+    { id: 17, src: image17, alt: 'Celebra un gol con la camiseta de Alianza Lima', group: 'c', category: 'Clubes anteriores' }, 
   ],
 
   // Prensa "Nota destacada": la primera va grande con photo de fondo; summary es la bajada

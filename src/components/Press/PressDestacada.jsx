@@ -56,7 +56,7 @@ export default function PressSection() {
       <Box maxW="1400px" mx="auto">
         <Box data-reveal mb={{ base: 7, md: 10 }}>
           <Text fontFamily="mono" fontSize="11px" fontWeight="bold" color="brand.dorado" textTransform="uppercase" letterSpacing="0.28em">
-            En los medios
+            Medios
           </Text>
           <Text as="h2" fontFamily="heading" fontWeight="bold" fontSize={{ base: '4xl', lg: '5xl' }} color="brand.amber" lineHeight={1}>
             Prensa
@@ -145,9 +145,9 @@ export default function PressSection() {
                   alt=""
                   aria-hidden="true"
                   position="absolute"
-                  top="50%"
+                  top="70%"
                   right={{ base: '-30px', lg: '-40px' }}
-                  boxSize={{ base: '170px', lg: '230px' }}
+                  boxSize={{ base: '170px', lg: '290px' }}
                   objectFit="contain"
                   opacity={0.1}
                   filter="grayscale(1)"

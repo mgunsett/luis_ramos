@@ -15,8 +15,42 @@ const MotionBox = motion(Box)
 
 // Videos "Temporadas": cada video bajo su año gigante (en contorno) con el escudo
 // del club. El primero (el más reciente) va relleno con el acento.
+const vimeoSrc = (video, params) =>
+  `https://player.vimeo.com/video/${video.vimeoId}?h=${video.vimeoHash}&${params}`
+
+// Preview en hover (solo desktop con mouse): el iframe de Vimeo se monta al entrar
+// en modo "background" (muteado, en loop, sin controles) y aparece con fade al cargar.
+function HoverPreview({ video, active }) {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => { if (!active) setLoaded(false) }, [active])
+  if (!active) return null
+  return (
+    <Box
+      as="iframe"
+      src={vimeoSrc(video, 'background=1&autoplay=1&muted=1&loop=1&autopause=0&dnt=1')}
+      title=""
+      aria-hidden="true"
+      tabIndex={-1}
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+      referrerPolicy="strict-origin-when-cross-origin"
+      onLoad={() => setTimeout(() => setLoaded(true), 20)}
+      position="absolute"
+      top="50%"
+      left={0}
+      w="100%"
+      border="none"
+      pointerEvents="none"
+      opacity={loaded ? 1 : 0}
+      transition="opacity .25s ease"
+      sx={{ aspectRatio: '9 / 16', transform: 'translateY(-50%)' }}
+    />
+  )
+}
+
 function SeasonVideo({ video, onOpen }) {
   const title = (video.fullTitle || video.title).split('|').pop().trim()
+  const [hovered, setHovered] = useState(false)
+  const canHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
   return (
     <Box data-season role="group">
       <Flex align="flex-end" justify="space-between" pb={3} mb={{ base: 4, md: 5 }} borderBottom="1px solid" borderColor="brand.amberLight">
@@ -42,6 +76,8 @@ function SeasonVideo({ video, onOpen }) {
         as="button"
         type="button"
         onClick={() => onOpen(video)}
+        onMouseEnter={() => video.vimeoId && canHover() && setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         aria-label={`Ver ${title} (${video.club})`}
         position="relative"
         display="block"
@@ -60,6 +96,7 @@ function SeasonVideo({ video, onOpen }) {
       >
         <Image className="cover" src={video.cover || video.thumbnail} alt="" loading="lazy" w="100%" h="100%" objectFit="cover"
                transition="transform .6s cubic-bezier(0.23,1,0.32,1)" />
+        {video.vimeoId && <HoverPreview video={video} active={hovered} />}
         <Box position="absolute" inset={0} bg="linear-gradient(transparent 50%, rgba(10,18,38,0.94))" />
         <Flex className="play" position="absolute" top={4} right={4} boxSize="54px" borderRadius="full" align="center" justify="center"
               bg="brand.amber" color="white" border="1.5px solid" borderColor="whiteAlpha.700"
@@ -222,10 +259,12 @@ export default function VideosSection() {
               bg="#000"
               mt={{ base: 0, md: '5%' }}
             >
-              <AspectRatio ratio={{ base: 9 / 16, md: 9 / 15 }}>
+              <AspectRatio ratio={openVideo.vimeoId ? 9 / 16 : { base: 9 / 16, md: 9 / 15 }}>
                 <Box
                   as="iframe"
-                  src={`https://www.instagram.com/reel/${openVideo.instagramId}/embed`}
+                  src={openVideo.vimeoId
+                    ? vimeoSrc(openVideo, 'autoplay=1&autopause=0&player_id=0&app_id=58479')
+                    : `https://www.instagram.com/reel/${openVideo.instagramId}/embed`}
                   title={openVideo.fullTitle}
                   border="none"
                   scrolling="no"
