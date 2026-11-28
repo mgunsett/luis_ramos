@@ -123,7 +123,7 @@ export const playerData = {
       years:   '2025',
       logo:    escudoAmerica,
       titles:  [],
-      goals:   12,  // goles con el club (todas las competencias)
+      goals:   13,  // goles con el club (todas las competencias)
       info:    'Préstamo',
     },
     {
@@ -141,7 +141,7 @@ export const playerData = {
       years:   '2023',
       logo:    escudoChankas,
       titles:  [],
-      goals:   19,  // goles con el club (todas las competencias)
+      goals:   21,  // goles con el club (todas las competencias)
       info:    '',
     },
     {
